@@ -90,6 +90,7 @@ color: #fff;
 	padding-right: 10px;
 	padding-left: 10px;
 	font: 40px/40px "Oswald" ,sans-serif;
+	vertical-align: bottom;
 }
 aside {
 	float: left;
