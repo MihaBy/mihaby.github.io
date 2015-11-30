@@ -36,7 +36,7 @@ div.position {
 	height: 100px;
 	content: "";
 
-
+	opacity: 0;
 background-image: -moz-radial-gradient(center, ellipse cover, rgba(0,244,0,1) 0%, rgba(0,181,0,1) 33%, rgba(7,227,7,1) 63%, rgba(4,181,4,1) 68%, rgba(0,145,0,1) 76%, rgba(0,244,0,1) 88%, rgba(0,244,0,1) 100%);
 background-image: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0,244,0,1)), color-stop(33%, rgba(0,181,0,1)), color-stop(63%, rgba(7,227,7,1)), color-stop(68%, rgba(4,181,4,1)), color-stop(76%, rgba(0,145,0,1)), color-stop(88%, rgba(0,244,0,1)), color-stop(100%, rgba(0,244,0,1)));
 background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0,244,0,1) 0%, rgba(0,181,0,1) 33%, rgba(7,227,7,1) 63%, rgba(4,181,4,1) 68%, rgba(0,145,0,1) 76%, rgba(0,244,0,1) 88%, rgba(0,244,0,1) 100%);
@@ -59,9 +59,14 @@ z-index: 1;
 
 top: 50px;
 left: 50px;
-}
-.tst-11-r:hover:before {
 
+
+transition: opacity 1.7s ease 0s;
+}
+
+
+.tst-11-r:hover:before {
+	opacity: 1;
 	transition-duration:  infinite;
 	animation: 2s linear 0s normal none infinite running tst-11-r;
 }
