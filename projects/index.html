@@ -1,0 +1,137 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style>
+
+
+
+div.position {
+	width: 160px;
+	margin: 5em auto;
+	position: relative;
+}
+
+.tst-11-r{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: #ECF5E4;
+	margin: 0 0px;
+	border-width: 24px;
+	border-style: solid;
+	border-color: #95CD8B;
+	text-align: center;
+	position: relative;
+	transition: border-color 1s ease 0s;
+}
+
+.tst-11-r:hover{
+	border-color:#486242;
+}
+
+
+.tst-11-r:before {
+	width: 100px;
+	height: 100px;
+	content: "";
+
+
+background-image: -moz-radial-gradient(center, ellipse cover, rgba(0,244,0,1) 0%, rgba(0,181,0,1) 33%, rgba(7,227,7,1) 63%, rgba(4,181,4,1) 68%, rgba(0,145,0,1) 76%, rgba(0,244,0,1) 88%, rgba(0,244,0,1) 100%);
+background-image: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0,244,0,1)), color-stop(33%, rgba(0,181,0,1)), color-stop(63%, rgba(7,227,7,1)), color-stop(68%, rgba(4,181,4,1)), color-stop(76%, rgba(0,145,0,1)), color-stop(88%, rgba(0,244,0,1)), color-stop(100%, rgba(0,244,0,1)));
+background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0,244,0,1) 0%, rgba(0,181,0,1) 33%, rgba(7,227,7,1) 63%, rgba(4,181,4,1) 68%, rgba(0,145,0,1) 76%, rgba(0,244,0,1) 88%, rgba(0,244,0,1) 100%);
+background-image: -o-radial-gradient(center, ellipse cover, rgba(0,244,0,1) 0%, rgba(0,181,0,1) 33%, rgba(7,227,7,1) 63%, rgba(4,181,4,1) 68%, rgba(0,145,0,1) 76%, rgba(0,244,0,1) 88%, rgba(0,244,0,1) 100%);
+background-image: -ms-radial-gradient(center, ellipse cover, rgba(0,244,0,1) 0%, rgba(0,181,0,1) 33%, rgba(7,227,7,1) 63%, rgba(4,181,4,1) 68%, rgba(0,145,0,1) 76%, rgba(0,244,0,1) 88%, rgba(0,244,0,1) 100%);
+background-image: radial-gradient(ellipse at center, rgba(0,244,0,1) 0%, rgba(0,181,0,1) 33%, rgba(7,227,7,1) 63%, rgba(4,181,4,1) 68%, rgba(0,145,0,1) 76%, rgba(0,244,0,1) 88%, rgba(0,244,0,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f400', endColorstr='#00f400', GradientType=1 );
+
+	background-position:  74px -74px;
+	-webkit-background-size: 148px  148px;
+	background-size: 148px 148px;
+	display: block;
+	position: absolute;
+
+
+
+transform-origin: 0px 0px 0px;
+transform: rotate(-45deg);
+z-index: 1;
+
+top: 50px;
+left: 50px;
+}
+.tst-11-r:hover:before {
+
+	transition-duration:  infinite;
+	animation: 2s linear 0s normal none infinite running tst-11-r;
+}
+
+@keyframes tst-11-r {
+  0% {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  100% {
+    -webkit-transform: rotate(314deg);
+    transform: rotate(314deg);
+  }
+}
+
+
+.wrap-tst-11 {
+	width: 148px;
+	height: 148px;
+	border-radius: 50%;
+	background-color: transparent;
+	margin: 0 0;
+	border-width: 81px;
+	border-style: solid;
+	border-color: #FFF;
+	text-align: center;
+	position: relative;
+	top: -105px;
+	left: -105px;
+	z-index: 4;
+}
+
+.wrap-tst-11-in {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: #DCF1DD;
+	position: relative;
+	top: 24px;
+	left: 24px;
+}
+
+.fr-1 {
+	opacity: 0;
+	transition: opacity 1s ease 0s;
+		font: 16px/120% 'Tahoma',sans-serif bold;
+	line-height: 100px;
+	padding-left: 10px;
+	color: #203F1B;
+	text-transform: uppercase;
+	text-align: left;
+}
+
+
+
+.tst-11-r:hover .fr-1 {
+opacity:1;
+transition: opacity 2.5s ease 0s;
+}
+
+</style>
+</head>
+<body>
+	<div class="position">
+	<div class="tst-11-r">
+	<div class="wrap-tst-11">
+		<div class="wrap-tst-11-in"><span class="fr-1"> waiting...</span></div>
+	
+	</div>
+</div>
+</div>
+</body>
+</html>
