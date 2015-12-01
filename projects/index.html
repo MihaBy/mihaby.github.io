@@ -16,18 +16,18 @@ div.position {
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
-	background-color: #ECF5E4;
+	background-color: #f1f8e9;
 	margin: 0 0px;
 	border-width: 24px;
 	border-style: solid;
-	border-color: #95CD8B;
+	border-color: #c5e1a5;
 	text-align: center;
 	position: relative;
 	transition: border-color 1s ease 0s;
 }
 
 .tst-11-r:hover{
-	border-color:#486242;
+	border-color: #33691e;
 }
 
 
@@ -61,7 +61,7 @@ top: 50px;
 left: 50px;
 
 
-transition: opacity 1s ease 0s;
+transition: opacity 1.7s ease 0s;
 }
 
 
@@ -103,7 +103,7 @@ transition: opacity 1s ease 0s;
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
-	background-color: #DCF1DD;
+	background-color: #f1f8e9;
 	position: relative;
 	top: 24px;
 	left: 24px;
@@ -127,6 +127,212 @@ opacity:1;
 transition: opacity 2.5s ease 0s;
 }
 
+
+
+
+/*=========================================*/
+
+.vr-2 {
+	margin: 15em auto;
+	width: 148px;
+	height: 148px;
+	border-radius: 50%;
+	background-color: #ECF5E4;
+
+background: #4dd0e1;
+background: -moz-radial-gradient(center, ellipse cover, #4dd0e1 0%, #4dd0e1 63%, #00838f 68%, #00838f 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #4dd0e1), color-stop(63%, #4dd0e1), color-stop(68%, #00838f), color-stop(100%, #00838f));
+background: -webkit-radial-gradient(center, ellipse cover, #4dd0e1 0%, #4dd0e1 63%, #00838f 68%, #00838f 100%);
+background: -o-radial-gradient(center, ellipse cover, #4dd0e1 0%, #4dd0e1 63%, #00838f 68%, #00838f 100%);
+background: -ms-radial-gradient(center, ellipse cover, #4dd0e1 0%, #4dd0e1 63%, #00838f 68%, #00838f 100%);
+background: radial-gradient(ellipse at center, #4dd0e1 0%, #4dd0e1 63%, #00838f 68%, #00838f 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4dd0e1', endColorstr='#00838f', GradientType=1 );
+
+	transition: border-color 1s ease 0s;
+	position: relative;
+}
+
+
+.vr-2-in {
+	width: 100px;
+	height: 100px;
+	/*===============border=========*/
+	border-radius: 50%;
+	border-width: 24px;
+	border-style: solid;
+	border-color: #80deea;
+	 background-color: transparent;
+	transition: border-color 0.1s ease 0s;
+	
+}
+
+.vr-2:hover  .vr-2-in {
+
+
+
+	border-left-color: #006064;
+	border-top-color: #006064;
+	border-bottom-color: #006064;
+	border-right-color: transparent;
+
+	transition: border-color 2.5s ease 0s;
+	transition-duration:  infinite;
+	animation: 2s linear 0s normal none infinite running tst-2-in;
+}
+
+
+
+	@keyframes tst-2-in {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+
+.vr-2-in-centr {
+	text-align: center;
+	width: 100px;
+	height: 100px;
+	background-color: #e0f7fa;
+	border-radius: 50%;
+	position: absolute;
+	top: 24px;
+	left: 24px;
+	transition: box-shadow 0.6s ease 0s;
+}
+
+
+
+.vr-2:hover .vr-2-in-centr {
+	box-shadow: 0px 0px 5px 5px #006064;
+		transition: box-shadow 1s ease 0s;
+}
+
+.fr-2 {
+	opacity: 0;
+	transition: opacity 1s ease 0s;
+	font: 16px/120% 'Tahoma',sans-serif bold;
+
+	line-height: 100px;
+	padding-left: 10px;
+	color: #33691e;
+	text-transform: uppercase;
+	text-align: left;
+}
+
+
+
+.vr-2:hover .fr-2 {
+opacity:1;
+transition: opacity 2s ease 0s;
+}
+
+
+/*=========================================*/
+/*						3					*/
+/*=========================================*/
+
+
+.vr-3 {
+	margin: 15em auto;
+	width: 148px;
+	height: 148px;
+	border-radius: 50%;
+	background-color:#ffd54f;
+	position: relative;
+}
+
+
+
+.vr-3:hover  {
+	transition: background-color 2s ease 0s;
+	background-color: #ff6f00;
+}
+
+.vr-3-in {
+	width: 100px;
+	height: 100px;
+	/*===============border=========*/
+	border-radius: 50%;
+	border-width: 24px;
+	border-style: solid;
+	border-color: #ffd54f;
+	 background-color: transparent;
+	transition: border-color 0.1s ease 0s;
+}
+
+.vr-3:hover  .vr-3-in {
+
+
+
+	border-left-color: transparent;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+	border-right-color: #ffca28;
+	transition: border-color 1s ease 0s;
+	transition-duration:  infinite;
+	animation: 2s linear 0s normal none infinite running tst-2-in;
+}
+
+
+
+	@keyframes tst-3-in {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+
+.vr-3-in-centr {
+	text-align: center;
+	width: 100px;
+	height: 100px;
+	background-color: #ffecb3;
+	border-radius: 50%;
+	position: absolute;
+	top: 24px;
+	left: 24px;
+	transition: box-shadow 0.3s ease 0s;
+}
+
+
+
+.vr-3:hover .vr-3-in-centr {
+	box-shadow: 0px 0px 5px 5px #ff6f00;
+	transition: box-shadow 1s ease 0s;
+}
+
+.fr-3 {
+	opacity: 0;
+	transition: opacity 1s ease 0s;
+	font: 16px/120% 'Tahoma',sans-serif bold;
+
+	line-height: 100px;
+	padding-left: 10px;
+	color: #ff6f00;
+	text-transform: uppercase;
+	text-align: left;
+}
+
+
+
+.vr-3:hover .fr-3 {
+opacity:1;
+transition: opacity 2s ease 0s;
+}
+
+
+
 </style>
 </head>
 <body>
@@ -137,6 +343,18 @@ transition: opacity 2.5s ease 0s;
 	
 	</div>
 </div>
+</div>
+
+<div class="vr-2">
+	
+	<div class="vr-2-in"></div>
+	<div class="vr-2-in-centr"><span class="fr-2"> waiting...</span></div>
+</div>
+
+<div class="vr-3">
+	
+	<div class="vr-3-in"></div>
+	<div class="vr-3-in-centr"><span class="fr-3"> waiting...</span></div>
 </div>
 </body>
 </html>
