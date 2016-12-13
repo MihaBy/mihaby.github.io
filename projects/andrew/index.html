@@ -4,12 +4,11 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<title>Bootstrap 101 Template</title>
 
 	<!-- Bootstrap -->
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="css/theme/white.css" id="theme">
 	<link type="text/css" rel="stylesheet" href="css/style.css">
@@ -38,8 +37,9 @@
 				<!-- Зібрано навігаційні лінки, форми, та інший вміст для переключення -->
 				<div class="collapse navbar-collapse" id="">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">(Лінк поточний)<span class="sr-only">(поточний)</span></a></li>
-						<li><a href="#">Лінк2</a></li>
+						<li><a href="#">Slide 1<span class="sr-only">Slide 1</span></a></li>
+						<li><a href="#/1">Slide 2</a></li>
+						<li><a href="#/2">Slide 3</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Спадне меню <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
@@ -56,30 +56,68 @@
 		</nav>
 		<div class="reveal" data-background-transition="slide" data-transition-speed="default">
 			<div class="slides">
-				<section data-background="#90caf9">Slide 1</section>
-				<section data-background="#c6ff00">Slide 2</section>
-				<section data-background="#ffea00">Slide 3</section>
+				<section id="slide_1">
+					<div class="content-wrapper">
+						<div class="text_divider"></div>
+						<h3>h3. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, a.</h3>
+						<div class="text_divider"></div>
+						<h5>h5 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, vel sit rerum! Quaerat, incidunt, ducimus?</h5>
+					</div>
+				</section>
+				<section  >
+					<div class="content-wrapper">
+						<div class="text_divider"></div>
+						<h3>h3. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, a.</h3>
+						<div class="text_divider"></div>
+						<h5>h5 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, vel sit rerum! Quaerat, incidunt, ducimus?</h5>
+					</div>
+				</section>
+				<section >
+					<div class="content-wrapper">
+						<div class="text_divider"></div>
+						<p>3</p>
+						<div class="text_divider"></div>
+					</div>
+				</section>
 			</div>
 		</div>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<script src="js/reveal.js"></script>
 	<script src="lib/js/head.min.js"></script>
 	<script>
 		Reveal.initialize({
+			//minScale: 1.0,
+			maxScale: 1.0,
+
 			controls: true,
 			progress: true,
 			history: true,
 			center: true,
-			mousewheel: true,
 
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
 			transitionSpeed: 'default',
-			backgroundTransition: 'default',
+							// none/fade/slide/convex/concave/zoom
+			backgroundTransition: 'default',		//none/fade/slide/convex/concave/zoom
 
-			theme: Reveal.getQueryHash().theme,
-			transition: Reveal.getQueryHash().transition || 'default',
+
+
+			// Parallax background image
+			parallaxBackgroundImage: "https://upload.wikimedia.org/wikipedia/commons/c/cd/View_from_connors_hill_panorama.jpg", // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
+
+			// Parallax background size
+			parallaxBackgroundSize: " 4289px 1067px", // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
+
+			// Number of pixels to move the parallax background per slide
+			// - Calculated automatically unless specified
+			// - Set to 0 to disable movement along an axis
+			//parallaxBackgroundHorizontal: 200,
+			//parallaxBackgroundVertical: 50
+
+			//theme: Reveal.getQueryHash().theme,
+			//transition: Reveal.getQueryHash().transition || 'default',// default cube
 			// Optional libraries used to extend on reveal.js
 			dependencies: [{
 				src: 'lib/js/classList.js',
@@ -88,6 +126,11 @@
 				}
 			}]
 		});
+	</script>
+	<script>
+	Reveal.configure({
+			mousewheel: true,
+	});
 	</script>
 	</body>
 </html>
