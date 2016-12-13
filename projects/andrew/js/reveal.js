@@ -114,7 +114,7 @@
 			autoSlideMethod: null,
 
 			// Enable slide navigation via mouse wheel
-			mouseWheel: false,
+			mouseWheel: true,
 
 			// Apply a 3D roll to links on hover
 			rollingLinks: false,
@@ -4742,4 +4742,3 @@
 	return Reveal;
 
 }));
-
