@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <title>Практика</title>
+    <style>
+        /*Deep Purple 50*/
+
+        :root {
+ 
+
+         --clr-50: #EDE7F6;
+         --clr-100: #D1C4E9;
+         --clr-200: #B39DDB;
+         --clr-300: #9575CD;
+         --clr-400: #7E57C2;
+         --clr-500: #673AB7;
+         --clr-600: #5E35B1;
+         --clr-700: #512DA8;
+         --clr-800: #4527A0;
+         --clr-900: #311B92;
+
+
+        --font-color-primary: #212121;
+        --font-color-secondary: #4a0072;
+    }
+        * {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    }
+    * a {
+        color: var(--font-color-primary);
+    }
+    * a:hover {
+        color: var( --font-color-secondary);
+    }
+
+    .header {
+        background-color: var(--clr-400);
+        color: var(--clr-50);
+    }
+    .header h1 {
+        width: 30%;
+        margin: 0 auto;
+        font-family: serif;
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+        padding: 16px;
+        text-shadow: 3px 3px 2px var(--clr-700);
+        text-align: center;
+    }
+    .grid {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: auto auto auto;
+
+        grid-column-gap: 4px;
+        grid-row-gap: 4px;
+
+        padding: 4px;
+        height: 100vh;
+       // border: solid 2px var( --clr-200);
+        background-color: var(--clr-400);
+    }
+    .prct-blk {
+        background-color: var(--clr-700);
+        text-align: center;
+        font-size: 1.1em;
+        padding: 1.5em;
+        color: var(--clr-50);
+        border-radius: 8px;
+        border: 1px solid var(--clr-200);
+
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        transition: background-color  0.2s ease-in-out;
+    }
+
+    .prct-blk:hover {
+        background-color: var(--clr-900);
+}
+    .prct-blk a {
+        color: var(--clr-50);
+        text-decoration: none;
+    }
+
+    .content {
+    
+    }
+
+    .content p {
+        padding: 16px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        text-shadow: 2px 2px 4px var(--clr-900);
+    }
+    .content a {
+        display: block;
+        font-family: 'Roboto', sans-serif;
+        font-size: 12px;
+        color:  var(--clr-200);
+        padding: 4px;
+        border-radius: 4px;
+        border: 1px solid var(--clr-200);
+        transition:  0.4s ease;
+    }
+
+    
+
+    .content a:hover {
+        background-color: var(--clr-50);
+        color: var(--clr-900);
+        border-color: var(--clr-800);
+    }
+    .null {
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>наработка опыта в верстке</h1>
+    </header>
+    <main class="grid">
+            <article class="prct-blk 7_buttons4">
+                <div class="content">
+                    <p> 7 вариантов кнопок. Часть 4 </p>
+                    <a href="./practice/7_buttons4/7_buttons4.html">Перейти</a>
+                </div>
+            </article>
+            <article class="prct-blk null"><a href="./practice/7_buttons4/7_buttons4.html">7_buttons4</a></article>
+            <article class="prct-blk null" ><a href="./practice/7_buttons4/7_buttons4.html">7_buttons4</a></article>
+            <article class="prct-blk null"><a href="./practice/7_buttons4/7_buttons4.html">7_buttons4</a></article>
+            <article class="prct-blk null"><a href="./practice/7_buttons4/7_buttons4.html">7_buttons4</a></article>
+            <article class="prct-blk null"><a href="./practice/7_buttons4/7_buttons4.html">7_buttons4</a></article>
+            <article class="prct-blk null"><a href="./practice/7_buttons4/7_buttons4.html">7_buttons4</a></article>
+            <article class="prct-blk null"><a href="./practice/7_buttons4/7_buttons4.html">7_buttons4</a></article>
+            <article class="prct-blk null"><a href="./practice/7_buttons4/7_buttons4.html">7_buttons4</a></article>
+            <article class="prct-blk null"><a href="./practice/7_buttons4/7_buttons4.html">7_buttons4</a></article>
+
+   
+</body>
+</html>
