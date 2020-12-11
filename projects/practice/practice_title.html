@@ -10,8 +10,20 @@
         /*Deep Purple 50*/
 
         :root {
- 
 
+         --clr-50: #ffffff;
+         --clr-100: #fafafa;
+         --clr-200: #f5f5f5;
+         --clr-300: #eeeeee;
+         --clr-400: #e0e0e0;
+         --clr-500: #bdbdbd;
+         --clr-600: #9e9e9e;
+         --clr-700: #757575;
+         --clr-800: #616161;
+         --clr-900: #424242;
+            
+         --clr-active: rgb(255, 228, 7);
+/*
          --clr-50: #EDE7F6;
          --clr-100: #D1C4E9;
          --clr-200: #B39DDB;
@@ -22,7 +34,7 @@
          --clr-700: #512DA8;
          --clr-800: #4527A0;
          --clr-900: #311B92;
-
+*/
 
         --font-color-primary: #212121;
         --font-color-secondary: #4a0072;
@@ -57,23 +69,22 @@
         display: grid;
         grid-template-rows: auto auto auto;
         grid-template-columns: auto auto auto;
-
         grid-column-gap: 4px;
         grid-row-gap: 4px;
-
         padding: 4px;
         height: 100vh;
-       // border: solid 2px var( --clr-200);
         background-color: var(--clr-400);
+  
     }
     .prct-blk {
-        background-color: var(--clr-700);
+        background-color: var(--clr-50);
         text-align: center;
         font-size: 1.1em;
         padding: 1.5em;
         color: var(--clr-50);
-        border-radius: 8px;
-        border: 1px solid var(--clr-200);
+        border: 1px solid var(--clr-50);
+        max-width: 800px;
+        min-width: 500px;
 
         display: flex;
         align-items: center;
@@ -81,14 +92,16 @@
         transition: background-color  0.2s ease-in-out;
     }
 
-    .prct-blk:hover {
+    /*.prct-blk:hover {
         background-color: var(--clr-900);
-}
+    }
+*/
+/*
     .prct-blk a {
         color: var(--clr-50);
-        text-decoration: none;
+        
     }
-
+*/
     .content {
     
     }
@@ -97,25 +110,28 @@
         padding: 16px;
         font-family: 'Roboto', sans-serif;
         font-size: 20px;
-        text-shadow: 2px 2px 4px var(--clr-900);
+        text-shadow: 0px 0px 2px var(--clr-700);
     }
     .content a {
         display: block;
         font-family: 'Roboto', sans-serif;
         font-size: 12px;
-        color:  var(--clr-200);
+        color:  var(--clr-600);
         padding: 4px;
-        border-radius: 4px;
-        border: 1px solid var(--clr-200);
+       
+        border: 1px solid var(--clr-50);
+        box-shadow: 0px 0px 8px var(--clr-500);
         transition:  0.4s ease;
+        text-decoration: none;
     }
 
     
 
     .content a:hover {
         background-color: var(--clr-50);
-        color: var(--clr-900);
-        border-color: var(--clr-800);
+        color: var(--clr-800);
+        box-shadow: 0px 0px 8px var(--clr-active);
+       // border-color: var(--clr-800);
     }
     .null {
         display: none;
@@ -133,8 +149,18 @@
                     <a href="./html5book/7_buttons4/7_buttons4.html">Перейти</a>
                 </div>
             </article>
-            <article class="prct-blk null"><a href="./html5book/">7_buttons4</a></article>
-            <article class="prct-blk null" ><a href="./html5book/">7_buttons4</a></article>
+            <article class="prct-blk ">
+                <div class="content">
+                    <p>Дизайн шаблонов записи в блоге</p>
+                    <a href="./html5book/blog_post_template_practice/blog_post_template_practice.html">Перейти</a>
+                </div>
+            </article>
+            <article class="prct-blk" >
+                <div class="content">
+                    <p>Оформление блоков на сайте</p>
+                    <a href="./html5book/content_blocks/content_blocks.html">Перейти</a>
+                </div>
+            </article>
             <article class="prct-blk null"><a href="./html5book/">7_buttons4</a></article>
             <article class="prct-blk null"><a href="./html5book/">7_buttons4</a></article>
             <article class="prct-blk null"><a href="./html5book/">7_buttons4</a></article>
