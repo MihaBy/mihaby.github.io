@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry X-mass</title>
+
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Satisfy', cursive;
+}
+body {
+    overflow: hidden;
+}
+
+.clr-white {
+    --bg-p-c: rgb(241, 241, 241);
+    --bg-sh-c: rgb(0, 0, 0);
+    --circle-gr-c-s: rgb(255, 255, 255);
+    --circle-gr-c-e:rgb(228, 227, 232);
+    --text-c: rgb(255, 42, 42);
+    --gen-points-p-c:rgb(255, 42, 42);
+    --gen-points-s-c:rgb(244, 72, 72);
+}
+
+.clr-red {
+    --bg-p-c: rgb(245, 42, 42);
+    --bg-sh-c: rgb(0, 0, 0);
+    --circle-gr-c-s: rgb(255, 42, 42);
+    --circle-gr-c-e:rgb(235, 42, 42);
+    --text-c: rgb(241, 241, 241);
+    --gen-points-p-c:rgb(255, 255, 255);
+    --gen-points-s-c:rgb(228, 227, 232);
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var( --bg-p-c);
+    position: relative;
+}
+
+.wrapper i {
+    position: absolute;
+    background-color: var(--gen-points-p-c);
+    border-radius: 50%;
+    animation: animate linear infinite;
+}
+
+.wrapper i:nth-child(even) {
+    background-color: var(--gen-points-s-c);
+}
+
+.box { 
+    position: absolute;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 450px;
+    max-height: 450px;
+    width: 70vw;
+    height: 70vw;
+}
+
+.box:before {
+    content:"";
+    position: absolute;
+    top:0;
+    left:50%;
+    width:100%;
+    height: 100%;
+    background-image: linear-gradient(to right, var(--bg-sh-c), transparent);
+    opacity: 0.1;
+    transform: rotate(45deg);
+    transform-origin: left;
+}
+
+.circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-image: linear-gradient(135deg, var(--circle-gr-c-s), var(--circle-gr-c-e));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.circle:before {
+    content:"";
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    top:5px;
+    bottom: 5px;
+    background-image: linear-gradient(315deg, var(--circle-gr-c-s), var(--circle-gr-c-e));
+    border-radius: 50%;
+}
+
+.circle h2 {
+    position: absolute;
+    z-index: 2;
+    font-size: 3.5em;
+    text-align: center;
+    color: var(--text-c);
+}
+
+@media (orientation: landscape) and (max-width: 920px) {
+    .box {
+        width: 50vw;
+        height: 50vw;
+    }
+}
+
+@media  (max-width: 920px) {
+    .circle h2 {
+        font-size: calc( 16px + 40 * ((100vw - 320px) / 600));
+    } 
+}
+
+@keyframes animate {
+    0% 
+    {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    0% 
+    {
+        opacity: 1;
+    }
+    90% 
+    {
+        opacity: 1;
+    }
+    100% 
+    {
+        transform: translateY(-2000%);
+        opacity: 0;
+    }
+}
+
+.chkbox {
+    position: absolute;
+    top:0;
+    z-index: 1000;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+
+
+}
+.chkbox input {
+    margin-top: 3px;
+    position: relative;
+    background-color: transparent;
+    padding: 8px 40px;
+    border-radius: 4px;
+    color: var(--text-c);
+    border: 3px solid var(--text-c);
+    cursor: pointer;
+    box-shadow: 0 0 2px var( --gen-points-p-c),inset 0px 0px 4px var(--gen-points-p-c);
+    font-size: 1em;
+    
+
+}
+    </style>
+</head>
+<body class="clr-red">
+    <div class="chkbox">
+            
+            <input  name="color" type="button" value="red" id="color-btn">
+        
+    </div>
+    <section class="wrapper" id="js-bubbles">
+    <div class="box">
+        <div class="circle">
+            <h2>Happy<br>
+            Christmas</h2>
+        </div>
+    </div>
+</section>
+</body>
+<script>
+    function bubbles() {
+        var count =200;
+        var section = document.getElementById("js-bubbles");
+        var i = 0;
+        while (i < count) {
+            var bubble = document.createElement('i');
+            var x = Math.floor(Math.random() * window.innerWidth);
+            var y = Math.floor(Math.random() * window.innerHeight);
+            var size = Math.random() * 10 * ((window.innerWidth - 20) / 1900); 
+            bubble.style.left = x + 'px';
+            bubble.style.top = y + 'px';
+            bubble.style.width = 1 + size + 'px'; 
+            bubble.style.height = 1 + size + 'px'; 
+            
+            bubble.style.animationDuration = 5 + size + 's';
+            bubble.style.webkitAnimationDelay  = -10 - size + 's';
+
+            section.appendChild(bubble);
+            i++;
+
+        }
+        
+    }
+   // bubbles();
+
+    function chgC() {
+        var color = document.getElementById("color-btn");
+        color.addEventListener("click",changeColor);
+    }
+
+
+    function changeColor() {
+            var color2 = document.getElementById("color-btn");
+            let getTag =  document.getElementsByTagName("BODY")[0];
+            var colorValue = color2.getAttribute("value")
+
+            if (colorValue == "red") {
+                getTag.removeAttribute("class");
+                getTag.setAttribute("class", "clr-white"); 
+                color2.setAttribute("value", "white"); 
+                
+            }
+       
+                if (colorValue  == "white") {
+                getTag.removeAttribute("class");
+                getTag.setAttribute("class", "clr-red"); 
+                color2.setAttribute("value", "red"); 
+               
+            }
+        
+    }
+
+
+
+    window.onload = function funLoad() { 
+ 
+            chgC();
+            bubbles();
+        } 
+    </script>
+</html>
