@@ -1,0 +1,77 @@
+html,
+body,
+div,
+h1,
+h2,
+h3,
+p,
+pre,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+blockquote {
+	padding: 0;
+	border: 0;
+	margin: 0;
+	// outline:0;
+	//background: transparent; блокирует использование pixel glass
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+// web development
+
+* {
+	//outline-color: rgba(0, 0, 0, 0.1);
+	//outline-style: solid;
+	//outline-width: 1px;
+}
+
+// No outline on focus controls!!!
+button,
+input,
+textarea,
+a {
+	outline: none !important;
+
+	&:hover,
+	&:active,
+	&:focus {
+		outline: none !important;
+	}
+}
+
+//mozilla reset styles
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+	margin-block-end: 0;
+	margin-block-start: 0;
+}

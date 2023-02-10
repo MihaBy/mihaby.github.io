@@ -1,0 +1,177 @@
+:root {
+    --height_quote__l: 52px;
+	--height_quote__s: 40px;
+}
+
+//vars
+$colors__primary: rgb(28, 33, 53);
+$colors__secondary: #fff;
+$font-size--base: 16px;
+$font-size--l: 20px;
+
+$breakpoints__min:                 320px;//not use
+
+// Extra small screen / XS / phone
+//default 359px;
+$breakpoints__xs:                  320px; //not use
+
+// Small screen / SM / tablet
+$breakpoints__sm:                  361px;
+
+// Medium screen / MD desktop / нетбуки типо чтоле
+$breakpoints__md:                  810px;
+
+// Large screen / LG desktop / небольшие экраны - ноуты
+$breakpoints__lg:                  1366px;
+
+//special for grid systems
+$breakpoints__hg:              1920px;
+
+$breakpoints__min_max:             ($breakpoints__xs - 1); //320 //not use
+$breakpoints__xs_max:              ($breakpoints__sm - 1); //360
+$breakpoints__sm_max:              ($breakpoints__md - 1); //809
+$breakpoints__md_max:              ($breakpoints__lg - 1); //1365
+$breakpoints__lg_max:              ($breakpoints__hg - 1);
+
+//mixins
+
+
+//not-xhg <1920
+@mixin not-xhg {
+	@media only screen and (max-width: $breakpoints__lg_max) {
+		@content;
+	}
+}
+//not-hg <1366
+@mixin not-hg {
+	@media only screen and (max-width: $breakpoints__md_max) {
+		@content;
+	}
+}
+//not-lg <810
+@mixin not-lg {
+	@media only screen and (max-width: $breakpoints__sm_max) {
+		@content;
+	}
+}
+//not-md <360
+@mixin not-md {
+	@media only screen and (max-width: $breakpoints__xs_max) {
+		@content;
+	}
+}
+//not-sm <420 not use in project
+@mixin not-sm {
+	@media only screen and (max-width: $breakpoints__min_max) {
+		@content;
+	}
+}
+
+.quote {
+
+
+	--item--sub-element--width: min-content;  // item real width  == 600px=>900 //hg == 478=>717 // add 1.5X //LG == 478 * 1.25 = 597.5
+	--item--element--width: calc(var(--item--sub-element--width) * 2); //span == span + before
+	--item--block--width: calc(var(--item--element--width) * 2);  //p
+	--item--content: " ";
+
+	display: flex;
+	overflow: hidden;
+	height: var(--height_quote__l);
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	text-transform: uppercase;
+
+	@include not-hg {
+		height: var(--height_quote__s);
+
+		//--item--sub-element--width: 717px;
+	}
+
+	@include not-lg {
+		//--item--sub-element--width: 597.5px;
+
+		height: var(--height_quote__s);
+		text-align: center;
+
+		--scale--k: 1;
+	}
+
+	.quote__item {
+		display: flex;
+		width: var(--item--block--width);
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+
+		span {
+			width: max-content;
+			min-width: var(--item--element--width);
+			text-align: center;
+
+			&::before {
+				display: inline-block;
+				min-width: var(--item--sub-element--width);
+				margin-right: var(--before--margin-right);
+				content: var(--item--content);
+				text-align: left;
+			}
+		}
+	}
+}
+
+.quote--main-style {
+	--scale--k: 1.5;
+
+	background-color: $colors__primary;
+	color: $colors__secondary;
+	font-size: $font-size--l; //20
+
+	@include not-hg {
+		font-size: $font-size--base; //16
+	}
+
+	@include not-lg {
+		font-size: $font-size--base;
+	}
+}
+
+.quote--secondary-style {
+	--scale--k: 1.5;
+
+	background-color: $colors__secondary;
+	color: $colors__primary;
+	font-size: $font-size--l; //20
+
+	@include not-hg {
+		font-size: $font-size--base; //16
+	}
+
+	@include not-lg {
+		font-size: $font-size--base;
+	}
+}
+
+.--animation--run-line {
+	--animation--time: 100000ms;
+
+	animation-delay: 0s;
+	animation-duration: var(--animation--time);
+	animation-iteration-count: infinite;
+	animation-name: scroll-left;
+	animation-play-state: running;
+	animation-timing-function: linear;
+}
+@keyframes scroll-left {
+	0% {
+		transform: translate3d(150%, 0, 0);
+
+		/* transform: translateZ(0); default */
+	}
+
+	to {
+		transform: translate3d(-150%, 0, 0);
+	}
+}
