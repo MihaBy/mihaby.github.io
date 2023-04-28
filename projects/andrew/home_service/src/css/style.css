@@ -1578,7 +1578,7 @@ input {
 	margin: 0 auto;
 	background-color: #fff;
 	border-radius: 41px;
-	content: url("../../static/img/svg/arrow.svg");
+	content: url("../../static/img/svg/Arrow.svg");
 	transform: translateY(-50%);
 }
 
