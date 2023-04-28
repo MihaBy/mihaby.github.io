@@ -1,0 +1,25 @@
+footer.footer
+  .container_r
+    .footer__content
+      .copyright Copyright © 2010-2021 Canvas All rights reserved
+      .logo.logo--footer
+        a(href="#") 
+          span Mary Jane
+          svg
+            use(xlink:href= image_path__svg+"sprite.svg#logo_svg")
+      nav.nav
+        ul.navigation.footer--nav
+          li.slide-in-left
+            a(href="#", data-scroll="#intro") Home
+          li.slide-in-left 
+            a(href="#", data-scroll="#services") Services
+          li.slide-in-left 
+            a(href="#", data-scroll="#about_us") About Us
+          li.slide-in-left 
+            a(href="#", data-scroll="#reviews") Reviews
+          li.slide-in-left 
+            a(href="#", data-scroll="#contact-form") Contact Us
+
+//script(src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js")
+script(src="./src/js/vendor/slick.min.js")
+script(src="./src/js/app.js")

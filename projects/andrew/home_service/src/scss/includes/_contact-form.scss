@@ -1,0 +1,170 @@
+.contact-form_container {
+	padding-top: 275px;
+	padding-bottom: 110px;
+	background-color: $colors__white;
+
+	@include not-hg {
+		padding-top: 90px;
+		padding-bottom: 10px;
+	}
+}
+
+.contact-form__heading {
+	display: flex;
+	max-width: 520px;
+	flex-direction: column;
+	align-items: center;
+	margin: 65px auto 80px;
+	color: $colors__primary;
+	text-align: center;
+
+	h2 {
+		@extend %Poppins__m;
+
+		margin-bottom: 42px;
+		font-size: $font-size--h2;
+		line-height: $line-height--base;
+	}
+
+	p {
+		font-size: $font-size--l;
+		line-height: $line-height--extend;
+	}
+}
+
+.contact-form {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-top: 80px;
+	margin-bottom: 105px;
+
+	--width: 522px;
+
+	@include not-hg {
+		justify-content: center;
+	}
+
+	@include not-lg {
+		justify-content: center;
+
+		--width: 100%;
+	}
+
+	label {
+		display: flex;
+		width: var(--width);
+		flex-direction: column;
+		margin-top: 25px;
+		color: $colors__primary;
+		font-size: $font-size--base;
+		line-height: $line-height--extend;
+
+		@extend %Poppins__m;
+
+		@include not-lg {
+			width: 100%;
+			max-width: 520px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+		span { display: block; }
+	}
+
+	input,
+	textarea {
+		@extend %Poppins__r;
+
+		display: block;
+		padding: 16px 16px 16px 23px;
+		border: 1px solid $colors__border--in;
+		background-color: $colors__main_6;
+		border-radius: 10px;
+		font-size: $font-size--base;
+		line-height: $line-height--extend;
+		resize: none;
+
+		@include not-lg {
+			width: 100%;
+			max-width: 520px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		&::placeholder {
+			color: $colors__t_1;
+		}
+	}
+
+	textarea {
+		height: 189px;
+
+		@include not-lg {
+			width: 100%;
+		}
+	}
+
+	button {
+		width: var(--width);
+		padding-top: 18px;
+		padding-bottom: 18px;
+		border: 2px solid $colors__main_1;
+		margin-top: 69px;
+		background-color: $colors__main_1;
+		border-radius: 10px;
+		color: $colors__white;
+		font-size: $font-size--base;
+		text-align: center;
+		transition: background-color 0.2s linear, color 0.2s linear;
+
+		@extend %Poppins__sb;
+
+		@include not-lg {
+			width: 100%;
+			max-width: 520px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		&:hover {
+			background-color: $colors__white;
+			color: $colors__main_1;
+		}
+	}
+}
+
+.left__column,
+.right__column {
+	display: flex;
+	flex-basis: 50%;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-right: 41px;
+	padding-left: 41px;
+
+	@include not-hg {
+		flex-basis: 100%;
+		align-items: center;
+	}
+
+	@include not-lg {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+.left__column {
+	align-items: flex-end;
+
+	@include not-hg {
+		align-items: center;
+	}
+}
+
+.right__column {
+	align-items: flex-start;
+
+	@include not-hg {
+		align-items: center;
+	}
+}

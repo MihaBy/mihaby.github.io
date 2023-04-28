@@ -1,0 +1,80 @@
+.intro {
+	background-image: url(https://via.placeholder.com/1920x1080/eee/FFFFFF/);
+	background-position: 50% 50%;
+
+	/* background-image:
+		url('#{$images__path--root}right_top.png'),
+		url('#{$images__path--root}left_bottom.png');
+	background-position: 100% 0%, 100% 100%;
+	background-repeat: no-repeat; */
+	background-size: contain;
+
+	&--css-filter {
+		filter: blur(4px);
+	}
+}
+
+.intro_text-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-top: 462px;
+	padding-bottom: 381px;
+	color: $colors__primary;
+	text-align: center;
+
+	@include not-hg {
+		padding-top: 402px;
+		padding-bottom: 321px;
+	}
+
+	@include not-lg {
+		padding-top: 180px;
+		padding-bottom: 180px;
+	}
+
+	h1 {
+		@extend %Poppins__sb;
+
+		margin-bottom: 19px;
+		font-size: $font-size--h1;
+	}
+
+	h3 {
+		@extend %Poppins__sb;
+
+		margin-bottom: 211px;
+		color: $colors__t_1;
+		font-size: $font-size--h3;
+
+		@include not-hg {
+			margin-bottom: 141px;
+		}
+
+		@include not-lg {
+			margin-bottom: 60px;
+		}
+	}
+
+	a {
+		display: block;
+		min-width: 280px;
+		padding: 19px 33px;
+		border: 2px solid $colors__black;
+		background-color: $colors__white;
+		border-radius: calc((#{$line-height--base} * #{$font-size--base}) / 2 + 22px);
+		font-size: $font-size--base;
+		text-align: center;
+		transition: border-color 0.2s linear, color 0.2s linear;
+
+		&:hover {
+			border-color: $colors__active;
+			color: $colors__active;
+		}
+	}
+}
+
+.tracking-in-contract-bck {
+	animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}

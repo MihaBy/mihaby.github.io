@@ -1,0 +1,165 @@
+.services_text {
+	max-width: 600px;
+	margin: 70px auto 30px;
+	text-align: center;
+
+	h2 {
+		margin-bottom: 32px;
+		color: $colors__primary;
+		font-size: $font-size--h2;
+
+		@extend %Poppins__m;
+	}
+
+	p {
+		color: $colors__primary;
+		font-size: $font-size--ml;
+		line-height: $line-height--custom;
+	}
+}
+
+.services__slider {
+	margin-top: 30px;
+	margin-right: 60px;
+	margin-bottom: 195px;
+	margin-left: 60px;
+
+	@include not-hg {
+		max-width: 500px;
+		margin-right: auto;
+		margin-bottom: 90px;
+		margin-left: auto;
+	}
+}
+
+.services__slider__el {
+	margin-top: 60px;
+	margin-bottom: 60px;
+	background-color: $colors__white;
+	border-radius: 40px;
+	filter: drop-shadow(-4px 4px 8px rgba(0, 0, 0, 0.15));
+	transition: background-color 0.2s ease-in-out;
+
+	&.slick-current {
+		position: relative;
+		background-color: $colors__main_1;
+		color: $colors__white;
+		filter: drop-shadow(-4px 4px 8px rgba(0, 0, 0, 0.1));
+		p { color: inherit; }
+		h4 { color: inherit; }
+
+		&::after {
+			position: absolute;
+			z-index: 1000;
+			top: 100%;
+			right: 0;
+			left: 0;
+			display: flex;
+			width: 69px;
+			height: 69px;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto;
+			background-color: $colors__white;
+			border-radius: 41px;
+			content: url(../../../static/img/svg/Arrow.svg);
+			transform: translateY(-50%);
+		}
+	}
+
+	&.slick-active {
+		cursor: pointer;
+	}
+
+	.services__slider__content {
+		margin-top: 117px;
+		margin-right: 47px;
+		margin-bottom: 117px;
+		margin-left: 47px;
+
+		@include not-xhg {
+			margin-top: 87px;
+			margin-right: 40px;
+			margin-bottom: 87px;
+			margin-left: 40px;
+		}
+
+		@include not-lg {
+			margin: 40px;
+		}
+	}
+
+	h4 {
+		@extend %Poppins__sb;
+
+		min-height: calc(4.8rem * 2);
+		color: $colors__primary;
+		font-size: $font-size--h4;
+		line-height: $line-height--extend;
+
+		@include not-lg {
+			margin-bottom: 10px;
+		}
+	}
+
+	p {
+		color: $colors__border--in;
+		line-height: $line-height--custom;
+	}
+}
+
+//SLICK CSS
+
+/*
+.slick-slide {
+	background-color: $colors__white;
+	transition: background-color 0.2s ease-in-out;
+
+	&.slick-active {
+		cursor: pointer;
+	}
+
+	&.slick-current {
+		position: relative;
+		background-color: $colors__main_1;
+		color: $colors__white;
+		filter: drop-shadow(-4px 4px 8px rgba(0, 0, 0, 0.1));
+		p { color: inherit; }
+		h4 { color: inherit; }
+
+		&::after {
+			position: absolute;
+			z-index: 1000;
+			top: 100%;
+			right: 0;
+			left: 0;
+			display: flex;
+			width: 69px;
+			height: 69px;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto;
+			background-color: $colors__white;
+			border-radius: 41px;
+			content: url(../../../static/img/svg/Arrow.svg);
+			transform: translateY(-50%);
+		}
+	}
+}
+*/
+
+.slick-prev {
+	left: -60px;
+
+	@include not-lg {
+		left: 16px;
+	}
+}
+
+.slick-next {
+	right: -60px;
+
+	@include not-lg {
+		right: 16px;
+	}
+}

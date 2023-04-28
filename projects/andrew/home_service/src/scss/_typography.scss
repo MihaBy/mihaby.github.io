@@ -1,0 +1,228 @@
+
+// Typography
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+
+/*
+
+HEADER
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight:  500 600;
+font-size: 14px;
+line-height: 21px; 1.5
+
+1 INTRO
+
+font-family: 'Poppins';
+font-weight: 600;
+font-size: 64px;
+line-height: 85px; 1.325
+
+font-family: 'Poppins';
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;1.5
+
+2
+
+font-family: 'Poppins';
+font-weight: 400;
+font-size: 48px;
+line-height: 55px;1.1458
+
+font-family: 'Poppins';
+font-weight: 400;
+font-size: 18px;
+line-height: 42px;2.3333
+
+3 VIDEO
+
+4  COMPANIES
+
+font-family: 'Poppins';
+font-weight: 500;
+font-size: 18px;
+line-height: 41px;2.27
+
+5 CLIENT SLIDERS
+
+font-weight: 500;
+font-size: 30px;
+line-height: 45px;1.5
+
+font-family: 'Poppins';
+
+font-weight: 400;
+font-size: 18px;
+line-height: 38px;2.111
+
+6 SERVICES SLIDER
+
+font-family: 'Poppins';
+font-weight: 500;
+font-size: 48px;
+line-height: 72px;1.5
+
+font-family: 'Poppins';
+font-weight: 400;
+font-size: 19px;
+line-height: 45px;2.368
+
+font-family: 'Poppins';
+font-weight: 600;
+font-size: 24px;
+line-height: 42px;1.75
+
+font-family: 'Poppins';
+font-weight: 400;
+font-size: 16px;
+line-height: 38px;2.375
+
+7 BOOK
+
+font-family: 'Poppins';
+font-weight: 500;
+font-size: 24px;
+line-height: 46px;1.916
+
+font-family: 'Poppins';
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;1.5
+
+8 CONTACT FORM
+
+font-family: 'Poppins';
+font-weight: 500;
+font-size: 48px;
+line-height: 72px;1.5
+
+font-family: 'Poppins';
+font-weight: 400;
+font-size: 18px;
+line-height: 35px;1.9444
+
+font-family: 'Poppins';
+font-weight: 500;
+font-size: 16px;
+line-height: 32px;2
+
+font-family: 'Poppins';
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;1.5
+
+9 REVIEWS
+
+font-family: 'Poppins';
+font-weight: 600;
+font-size: 48px;
+line-height: 77px;1.604
+
+font-family: 'Poppins';
+font-weight: 400;
+font-size: 21px;
+line-height: 45px;2.1428
+
+font-family: 'Poppins';
+font-weight: 500;
+font-size: 21px;
+line-height: 35px;1.6666
+
+10 SUBSCRIBE
+
+font-family: 'Poppins';
+font-weight: 600;
+font-size: 48px;
+line-height: 77px;1.6041
+
+font-family: 'Lato';
+
+font-weight: 400;
+font-size: 18px;
+line-height: 36px;2
+
+font-family: 'Poppins';
+font-weight: 400;
+font-size: 16px;
+line-height: 30px;1.875
+
+11 FOOTER
+
+font-family: 'Poppins';
+font-weight: 400;
+font-size: 16px;
+line-height: 35px;2.1875
+
+font-family: 'Poppins';
+font-weight: 400;
+font-size: 16px;
+line-height: 35px;2.1875
+*/
+// Typographic Variables
+//////////////////////////////////////////////////////
+
+// Good line-height and letter-spacing
+$line-height--sm: 1.1415;
+$line-height--base: 1.5;
+$line-height--extend: 2;
+$line-height--custom: 2.375;
+//$line-height--base: 1.428571429;
+$normal-letter-spacing: normal;
+
+// Guide
+
+/*
+$font-size--xxs: 10px;
+$font-size--xs: 11px;
+$font-size--s: 12px;
+*/
+$font-size--sm: 1.4rem;
+$font-size--base: 1.6rem;
+$font-size--l: 1.8rem;
+$font-size--ml: 1.9rem;
+$font-size--xl: 2.1rem;
+$font-size--xxl: 2.4rem;
+
+$font-size--h1: 6.4rem;
+
+/*
+$font-size--h1--sm: 128px;
+$font-size--h1--s: 110px;
+$font-size--h1--xs: 96px;
+$font-size--h1--xxss: 64px;
+$font-size--h1--xxs: 54px;
+$font-size--h1--xxxs: 40px;
+*/
+$font-size--h2: 4.8rem;
+
+/*
+$font-size--h2--sm: 32px;
+*/
+$font-size--h3--l: 3.6rem;
+$font-size--h3: 3rem;
+$font-size--h4: 2.4rem;
+
+// font-family
+//$font-family__sans: 'Montserrat', Helvetica, Arial, sans-serif;
+//+
+$font-family__main:  'Poppins', sans-serif;
+//$font-family__italic: 'Cardo', serif;
+//$font-family__cursive: 'Kaushan Script', cursive;
+//$font-family__text: 'Roboto', sans-serif;
+
+//$font-family__icon-fa:'FontAwesome';
+// font-weight
+$font-weight__light: 300;
+$font-weight__regular: 400;
+$font-weight__medium: 500;
+$font-weight__semi-bold: 600;
+$font-weight__bold: 700;
+$font-weight__extra-bold: 800;
+$font-weight__bolder: 900;
+
+// font-style
+$font-style__italic: italic;
+$font-style__normal: normal;

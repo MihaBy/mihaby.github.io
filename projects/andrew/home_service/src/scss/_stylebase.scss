@@ -1,0 +1,78 @@
+html {
+	font-size: 10px;
+}
+
+body {
+	background-color: $colors__secondary;
+	font-size: $font-size--base;
+	line-height: $line-height--base;
+
+	@extend %Poppins__r;
+
+	&.no-scroll {
+		overflow: hidden;
+	}
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+button,
+input {
+	padding: 0;
+	border-width: 0;
+	margin: 0;
+	background-color: transparent;
+}
+
+//.container_lg,
+.container_r,
+.container_sm {
+	width: 100%;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+.container_sm {
+	max-width: var(--c_width-sm);
+	//max-width: calc(var(--c_width-sm) + 0);
+}
+
+.container_r {
+	max-width: var(--c_width-r);
+	//max-width: calc(var(--c_width-r) + 0);
+}
+
+/*
+.container_lg {
+	max-width: var(--c_width-lg);
+	//max-width: calc(var(--c_width-lg) + 0);
+}
+*/
+//VENDOR
+@import "./vendor/slick";
+@import "./vendor/slick-theme";
+//MAIN
+@import "./includes/keyframes";
+@import "./includes/header";
+@import "./includes/intro";
+@import "./includes/specialized";
+@import "./includes/video";
+@import "./includes/companies";
+@import "./includes/cleaning";
+@import "./includes/services";
+@import "./includes/modal-servces";
+@import "./includes/book";
+@import "./includes/contact-form";
+@import "./includes/reviews";
+@import "./includes/subscribe";
+@import "./includes/footer";

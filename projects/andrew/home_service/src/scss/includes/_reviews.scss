@@ -1,0 +1,195 @@
+.reviews__container {
+	padding-top: 110px;
+	padding-bottom: 90px;
+	background-color: $colors__white;
+}
+
+.reviews__heading {
+	h2 {
+		margin-bottom: 15px;
+		color: $colors__primary;
+		font-size: $font-size--h2;
+		line-height: $line-height--base;
+		text-align: center;
+
+		@extend %Poppins__sb;
+	}
+}
+
+.reviews-slider {
+	margin-right: -16px;
+	margin-left: -16px;
+}
+
+.reviews-slide {
+	position: relative;
+	display: flex !important;
+	flex-direction: row;
+	padding: 71px 0;
+	border: 2px solid transparent;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	background-color: $colors__white;
+	border-radius: 40px;
+	filter: drop-shadow(-4px 4px 10px rgba(0, 0, 0, 0.15));
+
+	@include not-lg {
+		flex-wrap: wrap;
+		padding: 40px 0 71px;
+	}
+}
+
+.reviews-slide__left-col {
+	max-width: 327px;
+	flex-basis: 28.5%;
+	margin-left: 138px;
+
+	@include not-hg {
+		display: flex;
+		min-width: 180px;
+		flex-basis: auto;
+		align-items: center;
+		justify-content: center;
+		margin-left: 40px;
+
+		@include not-lg {
+			margin: 0 auto;
+		}
+	}
+
+	img {
+		border-radius: 70px;
+
+		@include not-hg {
+			border-radius: 40px;
+		}
+
+		@include not-lg {
+			padding: 30px;
+			margin: 0 auto;
+		}
+	}
+}
+
+.reviews-slide__right-col {
+	--pl: 87px;
+
+	position: relative;
+	display: flex;
+	flex-basis: 71.5%;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding-right: 100px;
+	padding-left: var(--pl);
+
+	@include not-hg {
+		--pl: 40px;
+
+		flex-basis: auto;
+		padding-right: var(--pl);
+	}
+
+	&::before {
+		position: absolute;
+		right: 0;
+		bottom: 100%;
+		left: 0;
+		display: block;
+		padding-left: var(--pl);
+		content: url($svg__path--root+"quotes.svg");
+		transform: translateY(50%);
+
+		@include not-hg {
+			padding-left: calc(var(--pl) * 1.1);
+			transform: scale(0.9) translateY(100%);
+			transform-origin: left bottom;
+		}
+	}
+
+	.reviews-slide__content {
+		margin-top: 27px;
+		color: $colors__primary;
+		font-size: $font-size--xl;
+		line-height: $line-height--extend;
+
+		@include not-hg {
+			font-size: $font-size--base;
+		}
+	}
+
+	.reviews-slide__autor {
+		color: $colors__main_1;
+		font-size: $font-size--xl;
+		line-height: $line-height--base;
+
+		@extend %Poppins__r;
+
+		@include not-hg {
+			margin-top: $font-size--xl;
+		}
+	}
+}
+
+.reviews-prev,
+.reviews-next {
+	position: absolute;
+	z-index: 2;
+	top: 100%;
+	display: flex;
+	width: 45px;
+	height: 45px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	border: 2px solid $colors__border--in;
+	background: $colors__border--in;
+	border-radius: 30px;
+	color: transparent;
+	cursor: pointer;
+	font-size: 0;
+	line-height: 0px;
+	outline: none;
+	transform: translate(0, -240%);
+	transition: all 0.2s linear;
+
+	&:hover,
+	&:focus {
+		border: 2px solid $colors__primary;
+		background: $colors__primary;
+	}
+
+	svg {
+		display: block;
+		width: 10px;
+		height: 16px;
+		fill: $colors__white;
+		font-size: 0;
+		line-height: 1;
+	}
+}
+
+.reviews-prev {
+	right: 152px;
+
+	@include not-hg {
+		right: 106px;
+	}
+
+	svg {
+		margin-left: -2px;
+	}
+}
+
+.reviews-next {
+	right: 86px;
+
+	@include not-hg {
+		right: 40px;
+	}
+
+	svg {
+		margin-right: -2px;
+	}
+}

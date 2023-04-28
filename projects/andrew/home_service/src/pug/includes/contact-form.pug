@@ -1,0 +1,22 @@
+.contact-form_container#contact-form
+    .container_sm 
+        .contact-form__heading 
+            h2 Get In Touch With Us
+            p We encourage you to contact us with any questions or comments you may have.
+        form.contact-form(action="/" method="post") 
+            .left__column
+                label(for="client-name")
+                    span First Name*
+                    input#client-name(type="text", name="client-name", placeholder="Your Name", required) 
+                label(for="contact-mail")
+                    span Email Address*
+                    input#contact-mail(type="email", name="contact-mail", placeholder="Your Email Adress", required) 
+                label(for="phone-number")
+                    span Phone Number*
+                    input#phone-number(type="text", name="phone-number", placeholder="Your Phone Number", required) 
+            .right__column
+                label(for="client-message")
+                    span Message*
+                    textarea#client-message(name="client-message", cols="30", rows="10", placeholder="Enter your message...", required)
+                button(type="submit") Submit
+

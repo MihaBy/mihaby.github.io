@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <title>Mary Jane</title>
+    <!--
+    block pixel
+    include ../includes/pixel/main-page__styles
+    
+    -->
+    <!--link(rel="stylesheet" type="text/css" href="pixel-glass/styles.css")-->
+    <!--link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css")-->
+    <!--link(rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css")-->
+    <link rel="stylesheet" href="./src/css/style.css">
+    <!--script(src="./src/js/vendor/jquery.min.js")-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--script(type="text/javascript" src="pixel-glass/script.js")-->
+  </head>
+  <body> 
+    <div class="header"> 
+      <div class="header__wrapper">
+        <div class="container_r">
+          <div class="header__inner"> 
+            <div class="logo"><a href="#" data-scroll="#intro"> <span>Mary Jane</span>
+                <svg>
+                  <use xlink:href="./static/img/svg/sprite.svg#logo_svg"></use>
+                </svg></a></div>
+            <nav class="nav">
+              <ul class="navigation">
+                <li class="slide-in-left"><a href="#" data-scroll="#intro">Home</a></li>
+                <li class="slide-in-left"> <a href="#" data-scroll="#services">Services</a></li>
+                <li class="slide-in-left"> <a href="#" data-scroll="#about_us">About Us</a></li>
+                <li class="slide-in-left"> <a href="#" data-scroll="#reviews">Reviews</a></li>
+                <li class="slide-in-left"> <a href="#" data-scroll="#contact-form">Contact Us</a></li>
+              </ul>
+            </nav>
+            <div class="search__form" data-type="header-search_form">
+              <form action="#" method="get">
+                <label for="search">
+                  <svg>
+                    <use xlink:href="./static/img/svg//sprite.svg#search_svg"></use>
+                  </svg>
+                </label>
+                <input type="search" name="search">
+              </form>
+              <p>Get Quote</p>
+            </div>
+            <div class="burger" id="burger-btn"><span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="intro" id="intro" data-height="intro-div">
+      <div class="intro_text-section">
+        <h1 class="tracking-in-contract-bck">Home Cleaning Services</h1>
+        <h3>Give Your Home Love, Care, and Cleanliness</h3><a href="#" data-scroll="#contact-form">order a service</a>
+      </div>
+    </div>
+    <section class="specialized" id="about_us">
+      <div class="specialized__inner">
+        <h2> When you trust your home to the cleaning crews at <b> Mary Jane®</b>, you can count on:</h2>
+        <ul>
+          <li>40 years of experience</li>
+          <li>Licensed, bonded, and insured professionals</li>
+          <li>Guaranteed satisfaction</li>
+          <li>Free cleaning estimates</li>
+        </ul>
+        <ul>
+          <li>Time-tested techniques</li>
+          <li>Specialized cleaning products</li>
+          <li>Advanced technology</li>
+        </ul>
+      </div>
+    </section>
+    <div class="video-section">
+      <div class="container_sm">
+        <div class="video-wraper" data-modal="modal-video"><img src="https://via.placeholder.com/1526x600/" alt="">
+          <!--img(src=image_path + "video__preview.png", alt="")-->
+          <svg class="video__play-btn">
+            <use xlink:href="./static/img/svg/sprite.svg#svg_video__play-btn"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="companies">
+      <div class="container_sm">
+        <div class="companies_content">
+          <p>Trusted by thousands of companies</p><img src="https://via.placeholder.com/842x30" alt="">
+          <!--img(src=image_path + "companies.png", alt="")-->
+        </div>
+      </div>
+    </div>
+    <div class="cleaning">
+      <div class="container_sm">
+        <div class="cleaning__wrapper">
+          <div class="cleaning__el" data-skick-el="0" data-scroll="#services">
+            <h3>Apartment Cleaning</h3>
+            <p>Get <b>30% OFF</b> in Apartment Cleaning Services</p><img src="https://via.placeholder.com/472x485/" alt="">
+            <!--img(src=image_path + "cleaning1.png", alt="")-->
+          </div>
+          <div class="cleaning__el" data-skick-el="1" data-scroll="#services">
+            <h3>Detailed Cleaning</h3>
+            <p>Get <b>30% OFF</b> in Detailed Cleaning Services</p><img src="https://via.placeholder.com/472x485/" alt="">
+            <!--img(src=image_path + "cleaning2.png", alt="")-->
+          </div>
+          <div class="cleaning__el" data-skick-el="2" data-scroll="#services">
+            <h3>Holiday Cleaning</h3>
+            <p>Get <b>30% OFF</b> in Holiday Cleaning Services</p><img src="https://via.placeholder.com/472x485/" alt="">
+            <!--img(src=image_path + "cleaning3.png", alt="")-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="services" id="services">
+      <div class="container_r">
+        <div class="services_text">
+          <h2>Our Services</h2>
+          <p>We provide best and high quality professional services for commercial and residential space.</p>
+        </div>
+        <div class="services__slider" data-skick="services">
+          <div class="services__slider__el">
+            <div class="services__slider__content">
+              <h4> 
+                <!-- Enhanced Disinfection Services-->
+              </h4>
+              <p> 
+                <!-- At Mary Jane, we’re experts in creating clean and healthy homes.-->
+              </p>
+            </div>
+          </div>
+          <div class="services__slider__el">
+            <div class="services__slider__content">
+              <h4> 
+                <!--House Cleaning Services-->
+              </h4>
+              <p> 
+                <!--At Mary Jane, we’re experts in creating clean and healthy homes. -->
+              </p>
+            </div>
+          </div>
+          <div class="services__slider__el">
+            <div class="services__slider__content">
+              <h4> 
+                <!--Housekeeping Services from a Trustworthy & Reliable Team-->
+              </h4>
+              <p> 
+                <!-- At Mary Jane, we’re experts in creating clean and healthy homes. -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-services">
+      <div class="modal__dialog">
+        <button class="modal__close" type="button" data-close-modal="close">
+          <svg class="svg-close_icon">
+            <use xlink:href="./static/img/svg/sprite.svg#svg_close_icon"></use>
+          </svg>
+        </button>
+        <div class="modal-services">
+          <div data-skick="services--modal">
+            <div class="modal-services__slider__el">
+              <h3></h3>
+              <div></div>
+              <!--
+              p Mary Jane® is proud to offer a program specifically designed to serve residents of apartments, condominiums, and other small spaces. 
+              p Our Mary Jane® for Small Spaces service offers customized pricing to groups of residents in the same apartment complex who register for weekly or bi-weekly service. Customers who start service through this program will receive a discount applied to their "first-time-in" service fee. Our experienced cleaning professionals will clean your apartment space from top to bottom, including ceiling fans, baseboards, under furniture, mirrors and windows, pictures and other wall art. 
+              p We understand that dirt, germs, and grime can find their way into countless corners and spaces that are hidden out of sight and we have the processes and techniques to bring the shine and sparkle to every inch of your apartment or condo.
+              -->
+            </div>
+            <div class="modal-services__slider__el">
+              <h3></h3>
+              <div></div>
+              <!--
+              p Mary Jane® is proud to offer a program specifically designed to serve residents of apartments, condominiums, and other small spaces. 
+              p Our Mary Jane® for Small Spaces service offers customized pricing to groups of residents in the same apartment complex who register for weekly or bi-weekly service. Customers who start service through this program will receive a discount applied to their "first-time-in" service fee. Our experienced cleaning professionals will clean your apartment space from top to bottom, including ceiling fans, baseboards, under furniture, mirrors and windows, pictures and other wall art. 
+              p We understand that dirt, germs, and grime can find their way into countless corners and spaces that are hidden out of sight and we have the processes and techniques to bring the shine and sparkle to every inch of your apartment or condo.
+              -->
+            </div>
+            <div class="modal-services__slider__el">
+              <h3></h3>
+              <div></div>
+              <!--
+              p Mary Jane® is proud to offer a program specifically designed to serve residents of apartments, condominiums, and other small spaces. 
+              p Our Mary Jane® for Small Spaces service offers customized pricing to groups of residents in the same apartment complex who register for weekly or bi-weekly service. Customers who start service through this program will receive a discount applied to their "first-time-in" service fee. Our experienced cleaning professionals will clean your apartment space from top to bottom, including ceiling fans, baseboards, under furniture, mirrors and windows, pictures and other wall art. 
+              p We understand that dirt, germs, and grime can find their way into countless corners and spaces that are hidden out of sight and we have the processes and techniques to bring the shine and sparkle to every inch of your apartment or condo.
+              -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="book-container"> 
+      <div class="container_sm"> 
+        <div class="book-content"> 
+          <p>If you are looking for a reliable and professional air conditioning service provider, then look no further! Our team of experienced technicians is here to provide you with the best air conditioning services for both domestic and commercial purposes.</p><a href="#" data-scroll="#contact-form">Book Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form_container" id="contact-form">
+      <div class="container_sm"> 
+        <div class="contact-form__heading"> 
+          <h2>Get In Touch With Us</h2>
+          <p>We encourage you to contact us with any questions or comments you may have.</p>
+        </div>
+        <form class="contact-form" action="/" method="post"> 
+          <div class="left__column">
+            <label for="client-name"><span>First Name*</span>
+              <input id="client-name" type="text" name="client-name" placeholder="Your Name" required>
+            </label>
+            <label for="contact-mail"><span>Email Address*</span>
+              <input id="contact-mail" type="email" name="contact-mail" placeholder="Your Email Adress" required>
+            </label>
+            <label for="phone-number"><span>Phone Number*</span>
+              <input id="phone-number" type="text" name="phone-number" placeholder="Your Phone Number" required>
+            </label>
+          </div>
+          <div class="right__column">
+            <label for="client-message"><span>Message*</span>
+              <textarea id="client-message" name="client-message" cols="30" rows="10" placeholder="Enter your message..." required></textarea>
+            </label>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="reviews__container" id="reviews">
+      <div class="container_r">
+        <div class="reviews__heading">
+          <h2>Reviews</h2>
+        </div>
+        <div class="reviews-slider" data-skick="reviews"></div>
+        <!--
+        .reviews-slide
+          .reviews-slide__left-col
+            img(src="https://placehold.co/654x654", alt="")
+          .reviews-slide__right-col
+            p.reviews-slide__content I always get a friendly, personal reception from both Mary Jane and his staff. When I needed multiple services but had maxed out my insurance, Mary Jane worked with me to identify the worst problem and work out a plan for the rest. Excellent, caring work. I highly recommend Mary Jane and his team.
+            p.reviews-slide__autor Aurora J.
+        .reviews-slide
+          .reviews-slide__left-col
+            img(src="https://placehold.co/654x654", alt="")
+          .reviews-slide__right-col
+            p.reviews-slide__content I always get a friendly, personal reception from both Mary Jane and his staff. When I needed multiple services but had maxed out my insurance, Mary Jane worked with me to identify the worst problem and work out a plan for the rest. Excellent, caring work. I highly recommend Mary Jane and his team.
+            p.reviews-slide__autor Aurora J.
+        -->
+      </div>
+    </div>
+    <div class="subscribe__container">
+      <div class="container_sm">
+        <div class="subscribe__content">
+          <h2>Subscribe Our Newsletter</h2>
+          <p>Subscribe our newsletter to get weekly updates!</p>
+          <form class="subscribe__form" action="/" method="post"> 
+            <input id="subscribe_mail" type="email" name="subscribe_mail" placeholder="Enter your email address" required>
+            <button type="submit">Subscribe Now
+              <svg>
+                <use xlink:href="./static/img/svg/sprite.svg#svg_subscrbe__right_arr"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-video">
+      <div class="modal__dialog">
+        <button class="modal__close" type="button" data-close-modal="close">
+          <svg class="svg-close_icon">
+            <use xlink:href="./static/img/svg/sprite.svg#svg_close_icon"></use>
+          </svg>
+        </button>
+        <div class="modal__video">
+          <!--iframe(  src="https://www.youtube.com/embed/VHDQLuzfYnw" title="YouTube video player" frameborder="0" allow="clipboard-write; encrypted-media; web-share" allowfullscreen)-->
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container_r">
+        <div class="footer__content">
+          <div class="copyright">Copyright © 2010-2021 Canvas All rights reserved</div>
+          <div class="logo logo--footer"><a href="#"> <span>Mary Jane</span>
+              <svg>
+                <use xlink:href="./static/img/svg/sprite.svg#logo_svg"></use>
+              </svg></a></div>
+          <nav class="nav">
+            <ul class="navigation footer--nav">
+              <li class="slide-in-left"><a href="#" data-scroll="#intro">Home</a></li>
+              <li class="slide-in-left"> <a href="#" data-scroll="#services">Services</a></li>
+              <li class="slide-in-left"> <a href="#" data-scroll="#about_us">About Us</a></li>
+              <li class="slide-in-left"> <a href="#" data-scroll="#reviews">Reviews</a></li>
+              <li class="slide-in-left"> <a href="#" data-scroll="#contact-form">Contact Us</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
+    <!--script(src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js")-->
+    <script src="./src/js/vendor/slick.min.js"></script>
+    <script src="./src/js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+.companies {
+	background-color: $colors__bg_main;
+}
+
+.companies_content {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: center;
+	padding-top: 90px;
+	padding-bottom: 90px;
+	margin-top: 73px;
+
+	@include not-lg {
+		margin-top: 40px;
+	}
+
+	p {
+		@extend %Poppins__m;
+
+		margin-bottom: 42px;
+		color: $colors__primary;
+		font-size: $font-size--l;
+		line-height: $line-height--custom;
+		text-align: center;
+	}
+
+	img {
+		width: 100%;
+		max-width: 842px;
+	}
+}

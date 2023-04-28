@@ -1,0 +1,11 @@
+.subscribe__container
+  .container_sm
+    .subscribe__content
+      h2 Subscribe Our Newsletter
+      p Subscribe our newsletter to get weekly updates!
+      form.subscribe__form(action="/" method="post") 
+        input#subscribe_mail(type="email", name="subscribe_mail", placeholder="Enter your email address", required)
+        button(type="submit") Subscribe Now
+          svg
+            use(xlink:href= image_path__svg+"sprite.svg#svg_subscrbe__right_arr")
+

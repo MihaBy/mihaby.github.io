@@ -1,0 +1,33 @@
+.header 
+    .header__wrapper
+        .container_r
+            .header__inner 
+                .logo
+                    a(href="#", data-scroll="#intro") 
+                        span Mary Jane
+                        svg
+                            use(xlink:href= image_path__svg+"sprite.svg#logo_svg")
+                nav.nav
+                    ul.navigation
+                        li.slide-in-left
+                            a(href="#", data-scroll="#intro") Home
+                        li.slide-in-left 
+                            a(href="#", data-scroll="#services") Services
+                        li.slide-in-left 
+                            a(href="#", data-scroll="#about_us") About Us
+                        li.slide-in-left 
+                            a(href="#", data-scroll="#reviews") Reviews
+                        li.slide-in-left 
+                            a(href="#", data-scroll="#contact-form") Contact Us
+                .search__form(data-type="header-search_form")
+                    form(action="#" method="get")
+                        label(for="search")
+                            svg
+                                use(xlink:href=image_path__svg+"/sprite.svg#search_svg")
+                        input(type="search" name="search")
+                    p Get Quote
+                #burger-btn.burger
+                    span
+                
+                
+

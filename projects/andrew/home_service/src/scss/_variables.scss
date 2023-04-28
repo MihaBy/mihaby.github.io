@@ -1,0 +1,196 @@
+// css variables
+
+//SCSS
+
+// Paths
+$images__path--root: "../../static/img/";
+$svg__path--root: "../../static/img/svg/";
+//$images__our__works: "project_1.jpg","project_2.jpg","project_3.jpg","project_4.jpg","project_5.jpg","project_6.jpg";
+// Palette
+// Colors
+//////////////////////////////////////////////////////
+
+//$colors__primary: $colors__white;
+
+/*
+TEXT #1B1B1B
+TEXT ACTIVE/BG #5E3CC1
+TEXT 2 #C8C8C8
+
+4
+#161B26
+5
+#282829
+//
+#92C4FF
+#FF93C0
+#90FFD1
+6
+
+#434343
+TEXT SLIDER INACTIVE #818181
+TEXT SLIDER ACTIVE #282829
+//background:
+#818181
+#282829
+
+7
+#FFFFFF
+8
+#282829
+#434343
+#BCBCBC
+//background:
+background: #FBFBFB;
+border: 1px solid #818181;
+9
+#1B1B1B
+#434343
+#5E3CC1
+//background:
+#282829
+#DADADA
+#5E3CC1
+*/
+
+/*
+text
+#1B1B1B
+TEXT ACTIVE #5E3CC1+
+TEXT 2 #C8C8C8
+#161B26
+#282829+
+#434343
+#818181+
+#FFFFFF+
+#BCBCBC
+
+bg
+#5E3CC1+
+#92C4FF
+#FF93C0
+#90FFD1
+#818181+
+#282829+
+#FBFBFB
+#DADADA
+
+*/
+$colors__white: #fff;
+$colors__black: #000;
+
+$colors__primary: #1b1b1b; //#1B1B1B
+$colors__bg_main: #fafafa;
+$colors__secondary: $colors__bg_main;
+
+$colors__main_1: #5e3cc1; //#5E3CC1
+$colors__main_2: #92c4ff; //#92C4FF
+$colors__main_3: #ff93c0; //#FF93C0
+$colors__main_4: #90ffd1; //#90FFD1
+$colors__main_5: #282829; //#282829
+$colors__main_6: #fbfbfb; //#FBFBFB
+$colors__main_7: #dadada; //#DADADA
+
+$colors__border--in: #818181; //#818181
+
+//
+$colors__t_1:#c8c8c8;//#C8C8C8
+$colors__t_2:#161b26;//#161B26
+$colors__t_3:#434343;//#434343
+$colors__t_4:#bcbcbc;//#BCBCBC
+
+$colors__active: $colors__main_1;
+
+/*
+$colors__svg-2:rgb(254, 239, 109); //#FEEF6D
+$colors__bg-slider: rgba(105, 105, 105, 0.9);
+*/
+//text
+$color__t__h: $colors__secondary;
+$color__t__main: $colors__primary;
+//$color__t__secondary: $colors__white;
+
+//state
+$link_hover: $colors__main_3;
+$button_click: $colors__main_4;
+
+//bg
+
+//footer
+$footer__bg_prime_color: $colors__primary;
+$footer__bg_second_color: $colors__main_2;
+//SVG
+
+//HERO
+
+//SVG
+
+// Gradient/backgrounds/
+
+//slick slider
+//$colors__main_1: hsl(318, 22%, 27%);
+//$colors__main_1-slider: darken($colors__main_1, 10%);
+//$colors__main_1-slider--active: lighten($colors__main_1, 60%);
+//$colors__main_1-slider_border:lighten($colors__main_1, 30%);
+
+// Grays
+
+//$colors__grays--lighter: #fafafa;
+
+// Text
+
+// Links
+
+// Borders and shadows
+
+//forms
+////////  END  COLORS/////
+
+//sizes
+
+//$width_content: 1170px;
+
+//font devider
+$divider_font_lg: 1.5;
+$divider_font_md: $divider_font_lg * 1.5;
+$divider_font_sm: $divider_font_md * 1.5;
+$divider_font_xs: $divider_font_sm * 1.2;
+// Breackpoints and containers
+//////////////////////////////////////////////////////
+// Breackpoints divs
+//
+// 1842 1526 1642
+
+:root {
+	//--c_width-lg: 1842px;
+	--c_width-r: 1682px;//1642
+	--c_width-sm: 1566px;//1526
+	--breakpoints__hg: 1920px;
+	--breakpoints__lg: 1366px; //+ footer //contact form //html rem -9px
+	--breakpoints__md: 810px;  // many corrections
+	--breakpoints__sm: 361px;
+}
+// Minimum Supported Width
+$breakpoints__min:                 320px;//not use
+
+// Extra small screen / XS / phone
+//default 359px;
+$breakpoints__xs:                  320px; //not use
+
+// Small screen / SM / tablet
+$breakpoints__sm:                  361px;
+
+// Medium screen / MD desktop / нетбуки типо чтоле
+$breakpoints__md:                  810px;
+
+// Large screen / LG desktop / небольшие экраны - ноуты
+$breakpoints__lg:                  1366px;
+
+//special for grid systems
+$breakpoints__hg:              1920px;
+
+$breakpoints__min_max:             ($breakpoints__xs - 1); //320 //not use
+$breakpoints__xs_max:              ($breakpoints__sm - 1); //360
+$breakpoints__sm_max:              ($breakpoints__md - 1); //809
+$breakpoints__md_max:              ($breakpoints__lg - 1); //1365
+$breakpoints__lg_max:              ($breakpoints__hg - 1);//1919

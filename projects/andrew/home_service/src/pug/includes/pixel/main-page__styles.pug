@@ -1,0 +1,31 @@
+style(type='text/css').
+    HTML {
+        background-repeat: no-repeat;
+        background-position:  50% 0;
+        /* Mobile layout by default */
+        background-image: url( "./static/img/Artboard.png" );
+        
+        }
+    @media   ( min-width: 360px ) and (max-width:809px) {
+        HTML {
+            background-image: url("./static/img/color__sm.png");
+            background-position:  50% 0;
+            /*background-position-y: 0;*/
+            }
+    }
+    @media ( min-width: 810px ) and (max-width:1365px) {
+        HTML {
+            background-image: url("./static/img/color__m.png");
+            background-position:  50% 0;
+            /*background-position-y: 0;*/
+            }
+    
+    }
+    @media ( min-width: 1366px ) and (max-width:1919px) {
+        HTML {
+            background-image: url("./static/img/Artboard.png");
+            background-position:  50% 0;
+            /*background-position-y: 0;*/
+            }
+    
+    }
