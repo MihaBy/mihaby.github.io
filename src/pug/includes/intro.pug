@@ -1,0 +1,14 @@
+.intro#intro(data-height="intro-div")
+    
+    .intro_wrappper#intro_wrappper
+        .intro__content 
+            h1 Hello! 
+            h2 My some works (with placeholder images)
+            .works 
+                a(href=main_links[0].href )=main_links[0].item_name 
+                a(href=main_links[1].href)=main_links[1].item_name 
+        .point_white
+            - var n = 0;
+            while n < 50
+                .point_elements= n++
+        object#bg__svg( type="image/svg+xml" data="./src/svg/bg.svg")

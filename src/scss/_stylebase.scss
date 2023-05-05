@@ -1,0 +1,41 @@
+html {
+	font-size: 10px;
+
+	@include not-lg {
+		font-size: 8px;
+	}
+}
+
+body {
+	font-size: $font-size--base;
+	line-height: $line-height--base;
+
+	@extend %Poppins__r;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+button,
+input {
+	padding: 0;
+	border-width: 0;
+	margin: 0;
+	background-color: transparent;
+}
+
+//VENDOR
+//MAIN
+//@import "./includes/keyframes";
+//@import "./includes/header";
+@import "./includes/intro";
+//@import "./includes/footer";
