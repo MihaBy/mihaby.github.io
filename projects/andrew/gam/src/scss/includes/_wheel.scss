@@ -1,0 +1,56 @@
+.wheel-container {
+  position: relative;
+  display: block;
+  width: 100%;
+
+  //width: 10px;
+  //height: 10px;
+  //width: 100%;
+  height: 100%;
+  flex-grow: 5;
+  padding-right: var(--wheel-pad);
+  padding-bottom: var(--wheel-pad);
+  padding-left: var(--wheel-pad);
+  margin-top: 43px;
+}
+
+.wheel {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: var(--wheel-w);
+  height: var(--wheel-h);
+
+  //max-height: var(--wheel-h);
+
+  //width: var(--wheel-w);
+  // height: var(--wheel-h);
+  margin: 0 auto;
+}
+
+.wheel>img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+
+  //max-width: 100vw;
+  max-width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.wheel>.arrow {
+  top: 50%;
+  transform: translate(-50%, -53%);
+}
+
+.wheel>.anim-rotation {
+  /* position: relative;
+  top: inherit;
+  left: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center; */
+  //inset: -223px 0 0 -208px;
+  transform: translate(0,0);
+}

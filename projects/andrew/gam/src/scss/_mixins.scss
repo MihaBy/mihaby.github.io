@@ -1,0 +1,150 @@
+// create functions like fragments with variables
+// Elements
+//////////////////////////////////////////////////////
+
+// example
+
+//@mixin small__line() {
+//	content:"";
+//	height: 3px;
+//	width: 60px;
+//	background-color: $colors__main_1;
+//   vertical-align: middle;
+//}
+
+//not-xhg <1920
+@mixin not-xhg {
+	@media only screen and (max-width: $breakpoints__lg_max) {
+		@content;
+	}
+}
+//not-hg <1366
+@mixin not-hg {
+	@media only screen and (max-width: $breakpoints__md_max) {
+		@content;
+	}
+}
+//not-lg <900
+@mixin not-lg {
+	@media only screen and (max-width: $breakpoints__sm_max) {
+		@content;
+	}
+}
+//not-md <360
+@mixin not-md {
+	@media only screen and (max-width: $breakpoints__xs_max) {
+		@content;
+	}
+}
+//not-sm <420 not use in project
+@mixin not-sm {
+	@media only screen and (max-width: $breakpoints__min_max) {
+		@content;
+	}
+}
+
+//////////////////////////////////////////////////////
+
+// TEST
+
+//////////////////////////////////////////////////////
+// Buttons
+
+@mixin not-gadgets {
+	@media only screen and (min-width: $breakpoints__md) {
+		@content;
+	}
+}
+
+@mixin btn-gradient() {
+	border: none;
+	box-shadow: 0 8px 30px rgba(255, 158, 106, 0.4);
+	color: $colors--white;
+	transition: color 0.2s ease;
+	will-change: background;
+
+	&:hover,
+	&:active,
+	&:focus {
+		box-shadow: 0 8px 30px rgba(255, 158, 106, 0.5);
+		color: $colors--white;
+		transform: translateY(-1 * $translate-size);
+
+		@include not-gadgets {
+			transform: translateY(-1 * $translate-size_number * $rubber-width_pixel);
+		}
+	}
+}
+
+@mixin btn-transparent($color) {
+	border: $border-width solid $color;
+	background-color: transparent;
+	color: $color;
+	//function for transition
+	transition: color 0.2s ease;
+	will-change: border-color;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: $colors--white_lighten;
+		color: $color;
+		transform: translateY(-1 * $translate-size);
+
+		@include not-gadgets {
+			transform: translateY(-1 * $translate-size_number * $rubber-width_pixel);
+		}
+	}
+}
+
+@mixin btn-bgc($color, $color-hover) {
+	transition: background-color 0.2s ease;
+	will-change: background-color;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: $color-hover;
+	}
+}
+// Links
+@mixin link-color($color, $color-hover) {
+	//function for transition
+	transition: color 0.2s ease;
+	will-change: color;
+
+	&,
+	&:focus {
+		color: $color;
+	}
+
+	&:hover,
+	&:active {
+		color: $color-hover;
+	}
+}
+
+//Responsive font size - take functions - calcfluidfontsize & strip-unit, and use them in mixin
+
+@mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+	font-size: $f-min;
+
+	@media (min-width: $w-min) {
+		@if ($fallback) {
+			font-size: $fallback;
+		}
+
+		font-size: calcfluidfontsize($f-min, $f-max, $w-min, $w-max, px);// calculation in px, can change
+	}
+
+	@media (min-width: $w-max) {
+		font-size: $f-max;
+	}
+}
+
+/* example
+
+.fluid-font-size {
+	@include fluidFontSize(16px, 24px, 480px, 1280px, 18px);
+  }
+*/

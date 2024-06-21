@@ -1,0 +1,113 @@
+
+.parallax-layout {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  width: 100%;
+
+  //height: 100vh;
+}
+
+.inner-parallax-images {
+  --min-width: 800px;
+
+  position: absolute;
+  z-index: -1;
+
+  //height: 100vh;
+  width: 100%;
+  min-width: var(--min-width);
+  background-image:
+    url($images__bg-icons + "32.png"),
+    url($images__bg-icons + "122.png"),
+    url($images__bg-icons + "122.png"),
+    url($images__bg-icons + "122.png"),
+    url($images__bg-icons + "43.png"),
+    url($images__bg-icons + "53.png"),
+    url($images__bg-icons + "62.png"),
+    url($images__bg-icons + "72.png"),
+    url($images__bg-icons + "82.png"),
+    url($images__bg-icons + "92.png"),
+    url($images__bg-icons + "102.png"),
+    url($images__bg-icons + "112.png"),
+    url($images__bg-icons + "16.png"),
+    url($images__bg-icons + "23.png")
+;
+  background-position: 16.3% 3.8%,
+    88.7% 2.1%,
+    15.3% 22.6%,
+    73.2% 100%,
+    75% 21%,
+    8.5% 95.8%,
+    91% 82.1%,
+    25.2% 89.4%,
+    90.8% 54.5%,
+    12.8% 76%,
+    9.5% 50.6%,
+    88.9% 33.5%,
+    92.7% 38.8%,
+    0% 70%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  inset:0;
+
+  @include not-lg  {
+    background-size: 14% auto;
+    inset: 0 calc((100vw - var(--min-width)) / 2) 0 calc((100vw - var(--min-width)) / 2);
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+
+  // height: 100%;
+  padding: 0;
+  margin: 0;
+ 
+}
+
+
+
+.content {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+
+  //height: 100vh;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.subheading {
+  padding-right: 10%;
+  padding-left: 10%;
+  margin-top: 26px;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.heading {
+  padding-right: 22%;
+  padding-left: 22%;
+  margin-top: 55px;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+:root {
+  --base-size: 590px;
+  --wheel-w: var(--base-size);
+  --wheel-h: var(--base-size);
+  --wheel-pad: 10%;
+}

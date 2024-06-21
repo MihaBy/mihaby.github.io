@@ -1,0 +1,37 @@
+@keyframes  outer-rotate {
+  0% {
+    transform: rotate(0);
+    transform-origin: 50% 50%;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform-origin: 50% 50%;
+  }
+
+}
+
+@keyframes  in-rotate {
+  0% {
+    top:0;
+    left: 0;
+    transform: rotate(0);
+    transform-origin: 50% 50%;
+  }
+
+  100% {
+    top:0;
+    left: 0;
+    transform: rotate(360deg);
+    transform-origin: 50% 50%;
+  }
+
+}
+
+.wheel>img.anim-rotation-in {
+  animation: linear 3s infinite in-rotate;   
+}
+
+.wheel>img.anim-rotation-out {
+  animation: linear 3s infinite outer-rotate;   
+}

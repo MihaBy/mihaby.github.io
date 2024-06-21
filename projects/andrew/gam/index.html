@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--link(rel="preconnect" href="https://fonts.googleapis.com")-->
+    <!--link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)-->
+    <!--link(href=href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet")-->
+    <title>favbet</title>
+    <style type="text/css">
+      HTML {
+          background-repeat: no-repeat;
+          background-position:  50% 0;
+          /* Mobile layout by default */
+          background-image: url( "./static/img/desktop-2.png" );
+          
+          }
+      @media   ( min-width: 360px ) and (max-width:809px) {
+          HTML {
+              background-image: url("./static/img/iPhone.png");
+              background-position:  50% 0;
+              /*background-position-y: 0;*/
+              }
+      }
+      @media ( min-width: 810px ) and (max-width:1365px) {
+          HTML {
+              background-image: url("./static/img/color__m.png");
+              background-position:  50% 0;
+              /*background-position-y: 0;*/
+              }
+      
+      }
+      @media ( min-width: 1366px ) and (max-width:1919px) {
+          HTML {
+              background-image: url("./static/img/desktop-2.png");
+              background-position:  50% 0;
+              /*background-position-y: 0;*/
+              }
+      
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="pixel-glass/styles.css">
+    <!--link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css")-->
+    <!--link(rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css")-->
+    <link rel="stylesheet" href="./src/css/style.css">
+    <!--script(src="./src/js/vendor/jquery.min.js")-->
+    <!--script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js")-->
+    <script type="text/javascript" src="pixel-glass/script.js"></script>
+    <script type="text/javascript" src="./src/js/app.js"></script>
+  </head>
+  <body> 
+    <!--block nav-->
+    <!--include ../includes/header.pug-->
+    <div class="parallax-layout">
+      <div class="inner-parallax-images"></div>
+    </div>
+    <div class="container"> 
+      <div class="content" data-attr="content">
+        <div class="heading"> <img src="../static/img/h1.png" alt=""></div>
+        <div class="subheading"><img src="../static/img/h2.png" alt=""></div>
+        <div class="wheel-container" data-attr="wheel-container">
+          <div class="wheel" data-attr="wheel"><img class="anim-rotation-in" src="../static/img/wheel/11-2.png" alt="" data-attr="wheel-layot"><img class="anim" src="../static/img/wheel/21-2.png" alt=""><img class="anim-rotation-out" src="../static/img/wheel/61.png" alt="" data-attr="light"><img class="arrow" src="../static/img/wheel/41-2.png" alt=""><img class="anim" src="../static/img/wheel/51-2.png" alt=""></div>
+        </div>
+      </div>
+    </div>
+    <!--block footer -->
+    <!--include ../includes/footer.pug-->
+  </body>
+</html>

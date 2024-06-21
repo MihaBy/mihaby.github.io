@@ -1,0 +1,38 @@
+
+
+
+body {
+  //height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-color: $colors__black;
+  background-image: url($images__path--root + "bg-i.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+img {
+  display: block;
+  
+  /* max-width: 100%; */
+  height: auto;
+}
+
+button,
+input {
+  padding: 0;
+  border-width: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+
+
+//VENDOR
+
+//MAIN
+@import "./includes/keyframes";
+@import "./includes/main";
+@import "./includes/wheel";
