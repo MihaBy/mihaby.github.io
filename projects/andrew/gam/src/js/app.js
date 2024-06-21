@@ -43,6 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //test
+
+
+
+
+
   var ad = document.getElementsByClassName('inner-parallax-images')[0];
   console.log(ad);
   //var bgpEl = ad.style.backgroundImage;
@@ -50,37 +55,58 @@ document.addEventListener("DOMContentLoaded", () => {
   var bgpEl = style.getPropertyValue('background-position-x');
   console.log(bgpEl);
   console.log( 'original');
+
+
+  //section 2 
+  var breakpointWidth = window.getComputedStyle(document.body).getPropertyValue('--breakpoints__md');
+  breakpointWidth = toFloatNumber (breakpointWidth);
+  console.log(breakpointWidth);
+  var adWidth = ad.offsetWidth;
+  var k = 6;
+  var calcOffset = breakpointWidth / adWidth * k;
+  console.log(calcOffset);
+
+//section 1 
   var bgpArr = [];
   var accumulator ='';
   console.log(bgpEl.length);console.log('bgpEl.length');
   console.log(bgpEl[bgpEl.length - 1 ]);console.log('bgpEl.length-1');
   for (let i = 0; i < bgpEl.length; i++ ) {
-    if (bgpEl[i] !== ',') {
+     if (i == bgpEl.length - 1 ) {
+      console.log(accumulator);
+      console.log('accumulator');
+      bgpArr.push(accumulator);
+      accumulator ='';
+    }
+    else if (bgpEl[i] !== ',') {
     accumulator = accumulator + String(bgpEl[i]);
     console.log(accumulator);
     console.log(i);
     }
-    else if (i == bgpEl.length - 1 ) {
-      console.log(accumulator);console.log('accumulator');
-      bgpArr.push(accumulator);
-    }
+    
     else {bgpArr.push(accumulator);
     accumulator ='';
     }
   }
   console.log(bgpArr);
   console.log('bgpArr');
-/*
+
   for (let i = 0; i < bgpArr.length; i++ ) {
     bgpArr[i] = toFloatNumber (bgpArr[i]);
   }
   console.log(bgpArr);
+  //calc
   for (let i = 0; i < bgpArr.length; i++ ) {
     if (bgpArr[i] < 50) {
-      bgpArr[i] = bgpArr[i] + 10;
+      //bgpArr[i] = bgpArr[i] + 10;calcOffset
+      bgpArr[i] = bgpArr[i] + calcOffset;
     } 
-    else { bgpArr[i] = bgpArr[i] - 10;}
+    else { 
+      //bgpArr[i] = bgpArr[i] - 10;
+      bgpArr[i] = bgpArr[i] - calcOffset;
+    }
   }
+
   console.log(bgpArr);
   for (let i = 0; i < bgpArr.length; i++ ) {
     bgpArr[i] = bgpArr[i] + '%';
@@ -94,7 +120,16 @@ document.addEventListener("DOMContentLoaded", () => {
     else bgpString = bgpString +' ' + bgpArr[i] + ',';
   }
   console.log(bgpString);
-*/
+
+  document.getElementsByClassName('heading')[0].addEventListener('click', function() {
+    ad.style['background-position-x'] = bgpString;
+  });
+  //if root media < 900 
+  //calc save and update value
+  //add k = document.offsetwidth (360-1900)  = 900/360 = 3 900/2000 = 0.5  (0.5 - 3) * (2-4) = (2% -12%) 
+
+
+
 });
 
 
