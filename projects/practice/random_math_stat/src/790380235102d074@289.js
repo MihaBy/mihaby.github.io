@@ -3,7 +3,7 @@ md`<div style="color: grey; font: 13px/25.5px var(--sans-serif); text-transform:
 
 # chart
 
-This chart shows the relationship between shows at what move the guessed number is guessed (the chance of guessing is given in percent) and the number of guesses`
+This chart shows the relationship between at what move the guessed number is guessed (the chance of guessing is given in percent) and the number of guesses`
 )}
 
 function _selection(d3,data)
