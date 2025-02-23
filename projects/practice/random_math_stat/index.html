@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./src/style.css">
+  <style>
+    .observablehq {
+      max-width: 1200px;
+      display: flex;
+      align-content: center;
+      justify-items: center;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+    }
+  </style>
+</head>
+<body>
+  
+  <script type="module">
+    import define from "./src/index.js";
+
+  const percentEl = document.getElementById("percent");
+  const quantityEl = document.getElementById("quantity");
+  const outputEl = document.getElementById("output");
+  const submitEl = document.getElementsByTagName("button")[0];
+  const resetEl = document.getElementById("reset");
+  const timer = document.getElementById("timeWork");
+
+  const bitDepth = 1;
+  const maxValue = bitDepth * 100;
+  const maxPercent = 100;
+  const minPercent = 0;
+  const maxRowsTextarea = 10;
+  let resultArray = [];
+  let steps = null;
+  let percents = null;
+  let mappedArray = null;
+  let sortedArray = [];
+ 
+  //set default values
+  percentEl.setAttribute( "max", maxPercent );
+  //percentEl.setAttribute( "min", minPercent );
+
+  //reset data
+  function resetData() {
+    outputEl.value = "";
+    outputEl.rows = 10;
+    resultArray = [];
+    sessionStorage.removeItem("sortedArray");
+    mappedArray = null;
+    sortedArray = [];
+    
+  }
+
+  function convertToNumber( value, bitDepth ) {
+    if ( !isNaN(value) && typeof( value ) == "number" ) {
+      return value * bitDepth;
+    } 
+    return NaN;
+  }
+
+  function getRandomInt(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
+  }
+
+  function mainCircle ( range, steps ) {
+  
+    let initNumber = getRandomInt(minPercent, range);
+    //console.info("initNumber__" + initNumber);
+    let searchNumber = null;
+    let counter = 0;
+    let maxSaveCounts = 10e6;
+    while ( counter < maxSaveCounts ) {
+      searchNumber = getRandomInt(minPercent, range);
+      if (initNumber != searchNumber) {
+        //console.info(searchNumber);
+        //console.info("try");
+        counter++;
+        }
+        else {
+        counter++;
+        //console.warn(initNumber);
+        //console.warn("find complete");
+        //console.warn("count__" + counter);
+        resultArray.push(counter);
+        outputEl.value += "count__" +  counter + "\n";
+        return false;
+      }
+    }
+  }
+
+  function createDataMap (mappedArray, resultArray, sortedArray ) {
+
+    let minValue = 0;
+    let maxValue = 0;
+
+    for (let j = 0; j < resultArray.length; j++) {
+
+      if (mappedArray.has(resultArray[j])) {
+          let mapValue = mappedArray.get(resultArray[j]);
+          mappedArray.set(resultArray[j], mapValue + 1 );
+        }
+        else mappedArray.set(resultArray[j],1);
+      }
+    //console.info(mappedArray);
+    //console.info("mappedArray");
+    //
+    minValue = mappedArray.size;
+
+    for (let minMax of mappedArray.keys()) {
+      maxValue = maxValue < minMax ? minMax : maxValue;
+      minValue = minValue > minMax ? minMax: minValue;
+    }
+
+    //console.info(maxValue);
+    //console.info("maxValue");
+    //console.info(minValue);
+    //console.info("minValue");
+
+    //
+    mappedArray.forEach(( key, value, map )=> {
+      if (key > 1 ) {
+        for (let i = 1; i<=key; i++ ) {
+          sortedArray.push({
+          resulted_value: value,
+          count_of_vaules: i
+          });
+        }
+      }
+      else {
+        sortedArray.push({
+        resulted_value: value,
+        count_of_vaules: key
+        //resulted_value: key,
+        //count_of_vaules: value,
+      });
+      }
+ 
+    });
+    //console.info(sortedArray);
+    //console.info("sortedArray");
+    sessionStorage.sortedArray =  JSON.stringify(sortedArray);
+  }
+    
+  
+  submitEl.addEventListener("click",  (e) => {
+    console.time("calculated");
+    console.timeLog("calculated");
+    e.preventDefault;
+    e.stopPropagation;
+    resetData();
+   
+    //
+    mappedArray = new Map();
+    let promise = new Promise(function(resolve, reject) {
+
+    steps = quantityEl.value;
+    percents = Number( percentEl.value );
+
+    let toNumber = convertToNumber(percents, bitDepth);
+    let range = Math.floor( maxPercent / toNumber );
+    for (let i = 0 ; i < steps; i++ ){
+      mainCircle (range, i);
+    }
+    outputEl.rows = resultArray.length < maxRowsTextarea ? resultArray.length : maxRowsTextarea; 
+
+    //createDataMap  ( mappedArray, resultArray, sortedArray );
+    resolve( createDataMap  ( mappedArray, resultArray, sortedArray ) );
+  });
+
+
+  import("./src/runtime.js").then(({Runtime, Library, Inspector}) => {
+    const runtime = new Runtime();
+    const main = runtime.module(define, Inspector.into(document.body));
+  });
+  
+  promise.then( function( result ) {
+
+  });
+      //console.info('main');
+
+
+});
+
+resetEl.addEventListener("click",  (e) => {
+  e.preventDefault;
+  e.stopPropagation;
+  resetData();
+  let clearD3El = document.getElementsByClassName("observablehq");
+    for (let node of clearD3El) {
+    node.remove();
+    }
+    for (let node of clearD3El) {
+    node.remove();
+    }
+});
+
+    //
+    </script>
+  <div class="container-lg text-center mt-4 ">
+    <div class="row align-items-center justify-content-between m-2 ">
+        <div class="col-md-4 col-sm-6 mb-3">
+          <div class="input-group">
+            <label class="input-group-text" for="percent">Set percent</label>
+            <input type="number" name="percent" id="percent" step="0.1" max="100" value="50" min="0" class="form-control form-control-sm">
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-3">
+          <div class="input-group">
+            <label class="input-group-text" for="percent">Set itterations</label>
+            <input type="number" name="quantity" id="quantity" min="0" max="1000000" value="100" class="form-control form-control-sm">
+          </div>
+        </div>
+
+        <div class="col-md-2 col-sm-6 mb-3">
+          <input type="reset" id="reset" value="reset" class="btn btn-outline-secondary  container-fluid">
+        </div>
+        <button class="col-md-2 col-sm-6 btn btn-primary mb-3" type="submit">calculate</button>
+    <!-- </form> -->
+      </div>
+    
+    <div class="row align-items-center justify-content-start mx-2">
+      <div class="col-sm-3 col-6">
+        <textarea name="output" id="output" cols="30" rows="10" class="form-control "></textarea>
+      </div>
+    </div>
+  </div>
+  <div id="container"></div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+  // logic
+  /*
+  1.check quantity 0.1% per step :
+    - set percent - default == 0.1%
+    - set quantity steps 1 - 10**4 , or the value finded/ minds find twice numbers
+    - button run: 
+      - how work: 
+        - find formula to set percent-default
+        - set quantity
+        - generate start value, were we been find
+        - run circle 
+    - save data: 
+      - value of each step [array]
+      - number of steps
+      - output inputed values
+      - add three js for painting graphic
+
+  //Метод Math.floor() - округление вниз. Округляет аргумент до ближайшего меньшего целого.
+  //Метод Math.ceil() - округление вверх. Округляет аргумент до ближайшего большего целого.
+  */
+
+
+
+/*
+create dataset
+[
+  {
+    x:(number min -> max 0-100)[Number],50 -> 100/50 = 2 0,1 min -- range !!x:  (count > range) => x == max(count)
+    y:  повторения check count. if count confirmed y++; y_default = 1; 
+  }
+]
+
+x_name: find result in this count
+y_name: quantity similar elements in this count
+
+create data
+ sample
+ [
+  {
+    "Name":"chevrolet chevelle malibu",
+    "Miles_per_Gallon":18,
+    "Cylinders":8,
+    "Displacement":307,
+    "Horsepower":130,
+    "Weight_in_lbs":3504,
+    "Acceleration":12,
+    "Year":1970
+    "Origin":"USA"
+  }
+]
+
+resultArray = 
+[
+ 0: 12,
+  38,
+  7,
+  4,
+  12,
+  1,
+  9,
+  8,
+  33,
+  1,
+  18,
+  1,
+  7,
+  21,
+  3,
+  2,
+  1,
+  1,
+  3,
+  2
+]
+sortedArray = [
+  {
+    resultedValue: 12,
+    countOfVaules: 1,
+  }
+]
+
+mappedArray = {
+  2 → 3,
+  14 → 1,
+  26 → 1,
+  12 → 1,
+  6 → 2,
+  57 → 1,
+  16 → 2,
+  7 → 4,
+  1 → 1,
+  4 → 1,
+  }
+  let minValue = 0;
+  let maxValue = 0;
+  let tempСomparator = 0;
+
+  let sortedArray = [];
+
+  mappedArray.forEach(( key, value, map )=> {
+    sortedArray.push({
+      resultedValue: key,
+      countOfVaules: value,
+    });
+  });
+*/
+</script>
+</html>
+

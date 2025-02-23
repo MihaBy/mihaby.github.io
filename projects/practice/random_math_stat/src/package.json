@@ -1,0 +1,14 @@
+{
+  "name": "790380235102d074",
+  "main": "790380235102d074@289.js",
+  "version": "289.0.0",
+  "homepage": "https://observablehq.com/d/790380235102d074",
+  "author": {
+    "name": "MihaBy",
+    "url": "https://observablehq.com/@mihaby"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
