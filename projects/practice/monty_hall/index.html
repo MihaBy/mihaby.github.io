@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monty Hall checker </title>
+  <!-- <link rel="stylesheet" type="text/css"  href="./src/bootstrap.min.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./src/style.css">
+  <style>
+    .cursorPointer{ 
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-md text-center my-4">
+    <div class="row gy-2 gx-3 align-items-center justify-content-center ">
+      <form class="was-validated col-auto col-xl-4  text-uppercase" >
+        <label class="visually-hidden" for="autoSizingInputGroup">counts</label>
+        <div class="input-group">
+          <span class="input-group-text">counts</span>
+          <input id="numberSteps" type="number" class="form-control" min="100" max="1000000" value="100" step="100" required>
+          <button id="setSteps" type="button" class="text-uppercase btn btn-outline-primary"  value="start generation" size="18">
+            <span role="status" >start generation</span>
+            <span class="spinner-border spinner-border-sm visually-hidden" aria-hidden="true"></span>
+            <span role="status" class="visually-hidden" >generation procces</span>
+          </button>
+        </div>
+        <div class="valid-feedback"></div>
+        <div class="invalid-feedback">wrong select</div>
+      </form>
+      <div class="col-12">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input cursorPointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="true" checked>
+          <label class="form-check-label cursorPointer" for="inlineRadio1">change door</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input cursorPointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="false">
+          <label class="form-check-label cursorPointer" for="inlineRadio2">stay on the chosen door</label>
+        </div>
+      </div>
+      <div class="col-auto col-lg-2">
+        <input id="resetData" type="button" class="btn btn-outline-primary text-uppercase w-100"  value="reset" disabled>
+      </div>
+    </div>
+    <div id="insertData" class="row align-items-center justify-content-center">
+    </div>
+  </div>
+</body>
+<script src="./src/bootstrap.bundle.min.js"></script>
+<script>
+
+const min = 0;
+const max = 2;
+
+const numberStepsEl = document.getElementById('numberSteps');
+const setAndRunEl = document.getElementById('setSteps');
+const resetDataEl = document.getElementById('resetData');
+const radioEl1 = document.getElementById('inlineRadio1');
+const radioEl2 = document.getElementById('inlineRadio2');
+const insertDataEl = document.getElementById('insertData');
+
+let count = 100;
+let resultArray = null;
+let testArray = null;
+
+  function getRandomInt(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
+  }
+
+  function generateStartIndex(min, max, array) {
+    let tempIdx = getRandomInt(min, max);
+     array[tempIdx] = 1;
+     return tempIdx;
+  };
+
+  function generateSearchIndex (min, max) {
+    return getRandomInt(min, max);
+  };
+
+  function getNotRightDoor(array, rightDoorIdx, pointer, countWrongChangeDoor) { 
+    let NotRightDoorArray = []; 
+
+    array.forEach((item, index, array) => {
+      if ((index != pointer) && (index != rightDoorIdx) ) { NotRightDoorArray.push(index)  }
+    });
+
+    
+    if (NotRightDoorArray.length > 1 ) {
+      countWrongChangeDoor[0] = countWrongChangeDoor[0] + 1;
+      return NotRightDoorArray[generateSearchIndex( min, NotRightDoorArray.length - 1) ];
+    }
+    else return NotRightDoorArray[0]; 
+  };
+
+  function changeDoor(selectIdx, notRightIdx, select, array, testCheck) { 
+
+    let saveIdx = null;
+    if(select === true ) {
+      array.forEach((item, index, array) => {
+        if ((index != selectIdx) && (index != notRightIdx) ) { 
+          saveIdx = index; 
+        }
+      });
+      if (selectIdx != saveIdx) {testCheck[0] = testCheck[0] + 1 }
+      selectIdx = saveIdx;
+      return selectIdx;
+    }
+    else if (select === false ) {
+      selectIdx = selectIdx;
+      return selectIdx;
+    }
+    else {console.warn('check types');}
+  };
+
+  function checkWin(startIdx, changedIdx) {
+    if (startIdx === changedIdx) {
+      return true;
+    }
+    else return false;
+  };
+
+  function saveResult(result, array, test) {
+    if (result === true ) {
+      array[0] = array[0] + 1;
+    } 
+    else if (result === false) {
+      array[1] = array[1] + 1;
+    }
+    else console.warn("check types");
+    test.push(Number(result));
+  };
+
+  function displayData(resultArray, testArray, count, type) {
+
+    let percentFind = Math.floor( (resultArray[0] / (resultArray[0] + resultArray[1])) * 100 ); 
+    let output = null;
+
+    if (type == true ) {
+    output = `<div class="col-12"><h6>Change door preset. Counts of iterations = ${ count }</h6></div><div class="col-4"><div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="${ percentFind }" aria-valuemin="0" aria-valuemax="100" ><div class="progress-bar" style="width: ${ percentFind }%">${ percentFind }%</div></div>`;
+    }
+    else if (type == false )  {
+    output = `<div class="col-12"><h6>Stay on the chosen door preset.. Counts of iterations = ${ count }</h6></div><div class="col-4"><div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="${ percentFind }" aria-valuemin="0" aria-valuemax="100" ><div class="progress-bar  bg-warning text-dark" style="width: ${ percentFind }%">${ percentFind }%</div></div>`;
+    }
+    else {console.warn ('check types');}
+
+    insertDataEl.innerHTML =insertDataEl.innerHTML + output;
+  };
+  function changeVisual(el) {
+    for (let child of el.childNodes ) {
+      if (child.tagName === "SPAN") {child.classList.toggle("visually-hidden");}
+    }
+    return true;
+  }
+  setAndRunEl.addEventListener("click", (event) => {
+    event.stopPropagation;
+    event.preventDefault();
+
+    let promise = new Promise(function (resolve,reject) {
+      let checkAnimation  = changeVisual(setAndRunEl);
+      
+      if (checkAnimation == true) {
+        setTimeout(() => resolve("done"), 50);
+      }
+
+    }).then( function (result) {
+      
+      //initial
+      resultArray = [0, 0];
+      testArray = [];
+      let defArray = [0,0,0];
+      if (numberStepsEl.value < 1 ) {numberStepsEl.value = 1}
+      else { count = numberStepsEl.value; }
+      resetDataEl.disabled = false;
+      let select = true;
+      select = radioEl1.checked;
+      let countWrongChangeDoor = [0];
+      let checkCountChangeDoor = [0]; 
+
+      for (let i = 0; i < count; i++) {
+      defArray = [0,0,0];
+
+        let startIdx = generateStartIndex(min, max, defArray);
+        let searchNumberIdx = generateSearchIndex(min, max);
+        let NotRightDoorIdx =  getNotRightDoor(defArray, startIdx, searchNumberIdx, countWrongChangeDoor);
+        let changedIdx = changeDoor(searchNumberIdx, NotRightDoorIdx, select, defArray, checkCountChangeDoor);
+        let result = checkWin(startIdx, changedIdx);
+
+        saveResult(result, resultArray, testArray);
+        
+      }
+
+      displayData(resultArray, testArray, count, select);
+      console.info( countWrongChangeDoor[0]  + ' - WrongChangeDoor count');
+      console.info( checkCountChangeDoor[0]  + ' - check Count Change Door ');
+    }).then(() => {
+      setTimeout(() => changeVisual(setAndRunEl), 50);
+    });
+    //
+  });
+
+  resetDataEl.addEventListener('click', (event) => {
+    event.preventDefault();
+    insertDataEl.innerHTML = null;
+    resetDataEl.disabled = true;
+  });
+
+</script>
+</html>
